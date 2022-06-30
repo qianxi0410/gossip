@@ -1,3 +1,14 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next/core-web-vitals", "@qianxi0410"],
+  "rules": {
+    "unicorn/prevent-abbreviations": "off",
+    "arrow-body-style": "off",
+    "react/function-component-definition": [
+      "error",
+      // use () => {} to declare a function component
+      {
+        "namedComponents": "arrow-function"
+      }
+    ]
+  }
 }
