@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 
 const Index: NextPage = () => {
   return (
-    <div>hello world</div>
+    <div className="text-3xl font-bold underline">hello world</div>
   )
 }
 
