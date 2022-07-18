@@ -1,8 +1,9 @@
-import Image from 'next/image'
 import Blog from './icons/blog'
 import Github from './icons/github'
 import Rss from './icons/rss'
 import Twitter from './icons/twitter'
+
+import Image from 'next/image'
 
 interface Properties {
   avatar: string
@@ -34,7 +35,7 @@ const Welcome: React.FC<Properties> = ({
 
     <div className="flex flex-row mt-8 justify-center space-x-8">
       <Github width="2em" height="2em" href={github} />
-      <Twitter width="2em" height="2em" href={twitter} />
+      {twitter && <Twitter width="2em" height="2em" href={twitter} />}
       <Rss width="2em" height="2em" />
       <Blog width="2em" height="2em" />
     </div>

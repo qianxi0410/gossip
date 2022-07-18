@@ -1,12 +1,15 @@
 /* eslint-disable jsx-a11y/heading-has-content */
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
+
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+import rehypeRaw from 'rehype-raw'
+
+import remarkGfm from 'remark-gfm'
+
 import type { SpecialComponents } from 'react-markdown/lib/ast-to-react'
 import type { NormalComponents } from 'react-markdown/lib/complex-types'
 import type { ReactMarkdownOptions } from 'react-markdown/lib/react-markdown'
-import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
-import rehypeRaw from 'rehype-raw'
-import remarkGfm from 'remark-gfm'
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
 const components: Partial<Omit<NormalComponents, keyof SpecialComponents> & SpecialComponents> = {
   h1: properties => <h1 {...properties} className="text-3xl font-bold my-5" />,

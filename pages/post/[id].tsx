@@ -1,6 +1,8 @@
-import type { NextPage } from 'next'
-import Link from 'next/link'
 import Markdown from '../../components/markdown'
+
+import Link from 'next/link'
+
+import type { NextPage } from 'next'
 
 const markdown = `
 # im the tittle
