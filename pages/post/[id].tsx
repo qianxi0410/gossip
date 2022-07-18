@@ -1,63 +1,44 @@
-import cli from '../../api'
 import Markdown from '../../components/markdown'
+import { fetchPaths, fetchPost, formatDate } from '../../lib'
 
 import Link from 'next/link'
 
+import type { Post } from 'gossip'
 import type { NextPage } from 'next'
 
-const PostDetail: NextPage = ({ post }) => (
+const PostDetail: NextPage<{ post: Post }> = ({ post }) => (
   <div className="my-20">
     <div className="flex flex-col items-start mb-10">
       <div className="text-4xl font-bold">
         {post.title}
       </div>
       <div className="text-xl">
-        <span>q1anx1</span> / <span>{post.created_at}</span> / <span>{post.updated_at}</span>
+        <span>q1anx1</span> /
+        <span>{formatDate(post.created_at)}</span> /
+        <span>{formatDate(post.updated_at)}</span>
       </div>
     </div>
 
     <Markdown className="text-2xl font-normal">
-      {post.body}
+      {post.content}
     </Markdown>
 
-    <div>
-      <Link href="/blog">
-        <a className="flex flex-row justify-end text-2xl text-gray-500 hover:text-gray-700 transition-colors">cd ..</a>
-      </Link>
-    </div>
+    <Link href="/">
+      <a className="flex flex-row justify-end text-2xl text-gray-500 hover:text-gray-700 transition-colors">cd ..</a>
+    </Link>
   </div>
 )
 
 // get all the posts id from the github issues
-export const getStaticPaths = async () => {
-  const { data: posts } = await cli.request('GET /repos/{owner}/{repo}/issues', {
-    owner: 'qianxi0410',
-    repo: 'qianx1.xyz',
-  })
+export const getStaticPaths = async () => ({
+  paths: await fetchPaths(),
+  fallback: false,
+})
 
-  const paths = []
-  for (const post of (posts as any)) {
-    paths.push({
-      params: {
-        id: String(post.number),
-      },
-    })
-  }
-
-  return {
-    paths,
-    fallback: false,
-  }
-}
-
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params }: { params: { id: string } }) => {
   const { id } = params
 
-  const { data: post } = await cli.rest.issues.get({
-    owner: 'qianxi0410',
-    repo: 'qianx1.xyz',
-    issue_number: id,
-  })
+  const post = await fetchPost(id)
 
   return {
     props: {

@@ -1,16 +1,12 @@
 import Image from 'next/image'
 
-interface Properties {
-  avatar: string
-  name: string
-  motto: string
-}
+import type { User } from 'gossip'
 
-const Header: React.FC<Properties> = ({ avatar, name, motto }) => (
+const Header: React.FC<{ user: User }> = ({ user }) => (
   <div>
     <div className="mt-5 flex flex-row items-end space-x-3">
       <Image
-        src={avatar}
+        src={user.avatar_url}
         alt="logo"
         className="rounded-full"
         width={80}
@@ -18,8 +14,8 @@ const Header: React.FC<Properties> = ({ avatar, name, motto }) => (
       />
 
       <div className="space-y-1">
-        <p className="text-xl">{name}</p>
-        <p>{motto}</p>
+        <p className="text-xl">{user.nick_name}</p>
+        <p>{user.bio}</p>
         <p />
       </div>
     </div>

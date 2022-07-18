@@ -1,30 +1,29 @@
-import cli from '../api'
-import Welcome from '../components/welcome'
+import Header from '../components/header'
+import Posts from '../components/posts'
+import { fetchPosts, fetchUser } from '../lib'
 
-import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next'
+import type { Post, User } from 'gossip'
 
-const Index: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ ...user }) => (
-  <Welcome
-    avatar={user.avatar_url}
-    company={user.company}
-    location={user.location}
-    github={`https://github.com/${user.login}`}
-    twitter={user.twitter_username ? `https://twitter.com/${user.twitter_username}` : ''}
-    name={user.name || user.login}
-    motto={user.bio || 'I have nothing to say.'}
-  />
-)
+import type { GetStaticProps, NextPage } from 'next'
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { data } = await cli.rest.users.getByUsername({
-    username: 'qianxi0410',
-  })
+  const user = await fetchUser()
+  const posts = await fetchPosts()
 
   return {
     props: {
-      ...data,
+      user,
+      posts,
     },
   }
 }
+
+const Index: NextPage<{ user: User; posts: Post[] }>
+ = ({ user, posts }) => (
+   <div className="space-y-10">
+     <Header user={user} />
+     <Posts posts={posts} />
+   </div>
+ )
 
 export default Index
