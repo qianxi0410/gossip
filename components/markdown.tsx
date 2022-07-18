@@ -38,6 +38,10 @@ const components: Partial<Omit<NormalComponents, keyof SpecialComponents> & Spec
         <SyntaxHighlighter
           showLineNumbers
           style={dracula as any}
+          customStyle={{
+            fontSize: '1.2rem',
+            fontFamily: 'FiraCode Nerd Font; monospace',
+          }}
           language={match[1]}
           PreTag="div"
           {...properties}
@@ -45,7 +49,7 @@ const components: Partial<Omit<NormalComponents, keyof SpecialComponents> & Spec
           {String(children).replace(/\n$/, '')}
         </SyntaxHighlighter>)
       : (
-        <code className={className} {...properties}>
+        <code className="bg-green-100" {...properties}>
           {children}
         </code>)
   },

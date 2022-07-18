@@ -1,10 +1,16 @@
 import Image from 'next/image'
 
-const Header = () => (
+interface Properties {
+  avatar: string
+  name: string
+  motto: string
+}
+
+const Header: React.FC<Properties> = ({ avatar, name, motto }) => (
   <div>
     <div className="mt-5 flex flex-row items-end space-x-3">
       <Image
-        src="https://avatars.githubusercontent.com/u/55543743?v=4"
+        src={avatar}
         alt="logo"
         className="rounded-full"
         width={80}
@@ -12,8 +18,8 @@ const Header = () => (
       />
 
       <div className="space-y-1">
-        <p className="text-xl">キリサメ qianxi</p>
-        <p>my vegetable exploded (我 菜 爆 了)</p>
+        <p className="text-xl">{name}</p>
+        <p>{motto}</p>
         <p />
       </div>
     </div>

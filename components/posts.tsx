@@ -1,13 +1,17 @@
+import Link from 'next/link'
 
 interface ItemProperties {
   title: string
-  date?: string
+  created_at: string
+  number: string
 }
 
-const PostItem: React.FC<ItemProperties> = ({ title, date }) => (
-  <div className="flex flex-row space-y-1 cursor-pointer items-center justify-between">
-    <div className="text-2xl font-medium hover:text-gray-500 transition-colors">{title}</div>
-    <div className="text-xm italic font-light">{date}</div>
+const PostItem: React.FC<ItemProperties> = ({ title, created_at, number }) => (
+  <div className="flex flex-row space-y-3 cursor-pointer items-start justify-between">
+    <Link href={`/post/${number}`}>
+      <a className="text-2xl font-medium hover:text-gray-500 transition-colors">{title}</a>
+    </Link>
+    <div className="text-xm italic font-light">{created_at}</div>
   </div>
 )
 
@@ -20,30 +24,25 @@ const PostBlock: React.FC<BlockProperties> = ({ year, items }) => (
   <div className="flex flex-col my-10">
     <div className="text-3xl font-medium my-3 italic text-gray-700">{year}</div>
     {items.map(item => (
-      <PostItem key={item.title} title={item.title} date={item.date} />
+      <PostItem
+        key={item.title}
+        title={item.title}
+        created_at={item.created_at}
+        number={item.number}
+      />
     ))}
   </div>
 )
 
-const Posts = () => {
-  const posts = [{
-    id: 1,
-    title: 'rust in action',
-    date: '2020-01-01',
-    content: 'y vegetable exploded (我 菜 爆 了)',
-    tags: ['我', '菜', '爆', '了'],
-  }, {
-    id: 2,
-    title: 'my vegetable exploded (我 菜 爆 了)',
-    date: '2020-01-01',
-    content: 'my vegetable exploded (我 菜 爆 了)',
-    tags: ['我', '菜', '爆', '了'],
-  }]
+const Posts: React.FC<any> = ({ posts }) => {
+  const map = new Map<string, any[]>()
+  for (const post of posts) {
+    const year = post.created_at.split('-')[0]
 
-  const map = new Map<string, Array<ItemProperties>>()
+    if (!map.has(year)) map.set(year, [])
 
-  map.set('2020', posts)
-  map.set('2021', posts)
+    map.set(year, [...map.get(year)!, post])
+  }
 
   // iter over map
 
@@ -52,7 +51,11 @@ const Posts = () => {
       <div className="italic font-bold text-3xl mb-3">Posts</div>
       {
         [...map].map(([year, items]) => (
-          <PostBlock key={year} year={year} items={items} />
+          <PostBlock
+            key={year}
+            year={year}
+            items={items}
+          />
         ))
       }
     </div>
