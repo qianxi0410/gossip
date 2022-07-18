@@ -52,6 +52,7 @@ export const fetchPosts = async () => {
       created_at: p.created_at,
       updated_at: p.updated_at,
       content: p.body!,
+      author: config.user,
     })
   }
 
@@ -72,6 +73,7 @@ export const fetchPost = async (id: string) => {
     created_at: data.created_at,
     updated_at: data.updated_at,
     content: data.body!,
+    author: config.user,
   }
 
   return post

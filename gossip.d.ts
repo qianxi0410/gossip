@@ -12,5 +12,6 @@ declare module 'gossip' {
     created_at: string
     updated_at: string
     content: string
+    author: string
   }
 }

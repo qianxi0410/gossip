@@ -13,7 +13,7 @@ const PostDetail: NextPage<{ post: Post }> = ({ post }) => (
         {post.title}
       </div>
       <div className="text-xl">
-        <span>q1anx1</span> /
+        <span>{post.author}</span> /
         <span>{formatDate(post.created_at)}</span> /
         <span>{formatDate(post.updated_at)}</span>
       </div>
