@@ -1,6 +1,8 @@
+import config from '../../lib/config'
+
 import type { SVGProps } from 'react'
 
-const Github: React.FC<SVGProps<SVGAElement>> = ({ children, width, height, href }) => (
+const Github: React.FC<SVGProps<SVGAElement>> = ({ children, width, height }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -8,7 +10,7 @@ const Github: React.FC<SVGProps<SVGAElement>> = ({ children, width, height, href
     height={height}
     cursor="pointer"
     viewBox="0 0 16 16"
-    onClick={() => window.open(href, '_blank')}
+    onClick={() => window.open(`https://github.com/${config.user}`, '_blank')}
   >
     <path
       fill="none"

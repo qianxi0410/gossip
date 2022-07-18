@@ -13,8 +13,8 @@ const PostDetail: NextPage<{ post: Post }> = ({ post }) => (
         {post.title}
       </div>
       <div className="text-xl">
-        <span>{post.author}</span> /
-        <span>{formatDate(post.created_at)}</span> /
+        <span>{post.author}</span> /&nbsp;
+        <span>{formatDate(post.created_at)}</span> /&nbsp;
         <span>{formatDate(post.updated_at)}</span>
       </div>
     </div>
@@ -24,7 +24,7 @@ const PostDetail: NextPage<{ post: Post }> = ({ post }) => (
     </Markdown>
 
     <Link href="/">
-      <a className="flex flex-row justify-end text-2xl text-gray-500 hover:text-gray-700 transition-colors">cd ..</a>
+      <a className="flex flex-row justify-end text-2xl text-gray-500 hover:text-black hover:underline hover:underline-offset-4 transition-all">cd ..</a>
     </Link>
   </div>
 )

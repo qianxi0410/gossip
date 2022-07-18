@@ -5,11 +5,11 @@ import Link from 'next/link'
 import type { Post } from 'gossip'
 
 const PostItem: React.FC<{ post: Post }> = ({ post }) => (
-  <div className="flex flex-row space-y-3 cursor-pointer items-start justify-between">
-    <Link href={`/post/${post.id}`}>
-      <a className="text-2xl font-medium hover:text-gray-500 transition-colors">{post.title}</a>
+  <div className="flex flex-row flex-wrap my-1 justify-between">
+    <Link href={`/post/${post.id}`} className="cursor-pointer">
+      <a className="text-2xl font-medium transition-all hover:underline hover:underline-offset-8">{post.title}</a>
     </Link>
-    <div className="text-xm italic font-light">{formatDate(post.created_at)}</div>
+    <span className="text-lg italic font-light self-center">{formatDate(post.created_at)}</span>
   </div>
 )
 
@@ -20,7 +20,7 @@ interface BlockProperties {
 
 const PostBlock: React.FC<BlockProperties> = ({ year, items }) => (
   <div className="flex flex-col my-10">
-    <div className="text-3xl font-medium my-3 italic text-gray-700">{year}</div>
+    <div className="text-3xl font-medium my-3 italic text-gray-500">{year}</div>
     {items.map(item => (
       <PostItem key={item.id} post={item} />
     ))}
@@ -32,7 +32,6 @@ const Posts: React.FC<{ posts: Post[] }> = ({ posts }) => {
 
   return (
     <div>
-      <div className="italic font-bold text-3xl mb-3">Posts</div>
       {
         [...map].map(([year, items]) => (
           <PostBlock key={year} year={year} items={items} />
