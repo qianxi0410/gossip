@@ -1,3 +1,4 @@
+import CopyRight from '../components/copyright'
 import Header from '../components/header'
 import Posts from '../components/posts'
 import { fetchPosts, fetchUser } from '../lib'
@@ -23,6 +24,7 @@ const Index: NextPage<{ user: User; posts: Post[] }>
    <div className="space-y-10">
      <Header user={user} />
      <Posts posts={posts} />
+     <CopyRight className="bottom-5" />
    </div>
  )
 

@@ -1,3 +1,4 @@
+import CopyRight from '../../components/copyright'
 import Markdown from '../../components/markdown'
 import { fetchPaths, fetchPost, formatDate } from '../../lib'
 
@@ -26,6 +27,8 @@ const PostDetail: NextPage<{ post: Post }> = ({ post }) => (
     <Link href="/">
       <a className="flex flex-row justify-end text-2xl text-gray-500 hover:text-black hover:underline hover:underline-offset-4 transition-all">cd ..</a>
     </Link>
+
+    <CopyRight className="bottom-0 mt-5" />
   </div>
 )
 
