@@ -1,4 +1,4 @@
-name: CI
+name: CI/CD
 
 on:
   push:
@@ -7,6 +7,9 @@ on:
   pull_request_target:
     branches:
       - main
+  # trigger by manually
+  # eslint-disable-next-line yml/no-empty-mapping-value
+  workflow_dispatch:
 
 jobs:
   # use eslint to check the code quality
@@ -47,3 +50,31 @@ jobs:
 
       - name: Run build
         run: pnpm run build
+        env:
+          OWNER: ${{ github.actor }}
+          # REPO: ${{ github.repository.name }}
+          REPO: qianx1.xyz
+
+  # if lint is successful, deploy to vercel
+  deploy:
+    # judge if the lint is successful
+    needs:
+      - lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: amondnet/vercel-action@v20 # deploy
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
+          vercel-org-id: ${{ secrets.ORG_ID}} # Required
+          vercel-project-id: ${{ secrets.PROJECT_ID}} # Required
+          github-token: ${{ secrets.GITHUB_TOKEN }} # Optional
+          vercel-args: --prod # Optional
+          working-directory: ./sub-directory
+          alias-domains: | # Optional
+            qianx1.xyz
+            ${{ github.repository.name }}-qianxi.vercel.app
+        env:
+          OWNER: ${{ github.actor }}
+          # REPO: ${{ github.repository.name }}
+          REPO: qianx1.xyz

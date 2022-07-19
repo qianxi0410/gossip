@@ -1,5 +1,3 @@
-import config from './config'
-
 import { Octokit } from 'octokit'
 
 import type { Post, User } from 'gossip'
@@ -9,7 +7,7 @@ const cli = new Octokit()
 // fetch the user info
 export const fetchUser = async () => {
   const { data } = await cli.rest.users.getByUsername({
-    username: config.user,
+    username: process.env.OWNER!,
   })
 
   const user: User = {
@@ -25,8 +23,8 @@ export const fetchUser = async () => {
 // fetch the static ids
 export const fetchPaths = async () => {
   const { data: posts } = await cli.rest.issues.listForRepo({
-    owner: config.user,
-    repo: config.repo,
+    owner: process.env.OWNER!,
+    repo: process.env.REPO!,
   })
 
   return posts.map(post => ({
@@ -39,8 +37,8 @@ export const fetchPaths = async () => {
 // fetch posts list
 export const fetchPosts = async () => {
   const { data } = await cli.rest.issues.listForRepo({
-    owner: config.user,
-    repo: config.repo,
+    owner: process.env.OWNER!,
+    repo: process.env.REPO!,
   })
 
   const posts: Post[] = []
@@ -52,7 +50,7 @@ export const fetchPosts = async () => {
       created_at: p.created_at,
       updated_at: p.updated_at,
       content: p.body!,
-      author: config.user,
+      author: process.env.OWNER!,
     })
   }
 
@@ -62,8 +60,8 @@ export const fetchPosts = async () => {
 // fetch post data
 export const fetchPost = async (id: string) => {
   const { data } = await cli.rest.issues.get({
-    owner: config.user,
-    repo: config.repo,
+    owner: process.env.OWNER!,
+    repo: process.env.REPO!,
     issue_number: Number(id),
   })
 
@@ -73,7 +71,7 @@ export const fetchPost = async (id: string) => {
     created_at: data.created_at,
     updated_at: data.updated_at,
     content: data.body!,
-    author: config.user,
+    author: process.env.OWNER!,
   }
 
   return post

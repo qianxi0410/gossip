@@ -1,5 +1,3 @@
-import config from '../../lib/config'
-
 import type { SVGProps } from 'react'
 
 const Github: React.FC<SVGProps<SVGAElement>> = ({ children, width, height }) => (
@@ -10,7 +8,8 @@ const Github: React.FC<SVGProps<SVGAElement>> = ({ children, width, height }) =>
     height={height}
     cursor="pointer"
     viewBox="0 0 16 16"
-    onClick={() => window.open(`https://github.com/${config.user}`, '_blank')}
+    // eslint-disable-next-line security/detect-non-literal-fs-filename
+    onClick={() => window.open(`https://github.com/${process.env.OWNER!}`, '_blank')}
   >
     <path
       fill="none"
