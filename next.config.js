@@ -8,6 +8,11 @@ const nextConfig = {
     OWNER: process.env.OWNER,
     REPO: process.env.REPO,
   },
+  experimental: {
+    images: {
+      unoptimized: true,
+    },
+  },
 }
 
 // eslint-disable-next-line unicorn/prefer-module
