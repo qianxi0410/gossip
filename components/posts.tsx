@@ -31,13 +31,13 @@ const Posts: React.FC<{ posts: Post[] }> = ({ posts }) => {
   const map = groupByDate(posts)
 
   return (
-    <div>
+    <>
       {
         [...map].map(([year, items]) => (
           <PostBlock key={year} year={year} items={items} />
         ))
       }
-    </div>
+    </>
   )
 }
 

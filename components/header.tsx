@@ -5,7 +5,7 @@ import Image from 'next/image'
 import type { User } from 'gossip'
 
 const Header: React.FC<{ user: User }> = ({ user }) => (
-  <div>
+  <>
     <div className="mt-5 flex flex-row justify-between space-x-3">
       <div className="flex flex-row justify-between">
 
@@ -29,7 +29,7 @@ const Header: React.FC<{ user: User }> = ({ user }) => (
     </div>
 
     <hr className="mt-3" />
-  </div>
+  </>
 )
 
 export default Header
