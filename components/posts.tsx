@@ -30,6 +30,12 @@ const PostBlock: React.FC<BlockProperties> = ({ year, items }) => (
 const Posts: React.FC<{ posts: Post[] }> = ({ posts }) => {
   const map = groupByDate(posts)
 
+  if (map.size === 0) {
+    return (
+      <div className="text-xl">No posts found. :D</div>
+    )
+  }
+
   return (
     <>
       {

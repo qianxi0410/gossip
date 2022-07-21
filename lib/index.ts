@@ -25,6 +25,8 @@ export const fetchPaths = async () => {
   const { data: posts } = await cli.rest.issues.listForRepo({
     owner: process.env.OWNER!,
     repo: process.env.REPO!,
+    labels: process.env.LABELS!,
+    per_page: 100,
   })
 
   return posts.map(post => ({
@@ -39,6 +41,8 @@ export const fetchPosts = async () => {
   const { data } = await cli.rest.issues.listForRepo({
     owner: process.env.OWNER!,
     repo: process.env.REPO!,
+    labels: process.env.LABELS!,
+    per_page: 100,
   })
 
   const posts: Post[] = []
