@@ -7,6 +7,18 @@ on:
   pull_request:
     branches:
       - main
+  issues:
+    types:
+      - opened
+      - reopened
+      - closed
+      - deleted
+      - labeled
+  issue_comment:
+    types:
+      - created
+      - edited
+      - deleted
 
 jobs:
   lint:
