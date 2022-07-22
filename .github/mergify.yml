@@ -2,7 +2,7 @@ pull_request_rules:
   - name: automatic merge for Dependabot pull requests
     conditions:
       - author~=^dependabot(|-preview)\[bot\]$
-      - check-success=GitHub CI - ci-and-cd
+      - check-success=lint (ubuntu-latest, 17.x)
     actions:
       merge:
         method: merge
