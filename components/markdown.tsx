@@ -40,7 +40,7 @@ const components: Partial<Omit<NormalComponents, keyof SpecialComponents> & Spec
           style={dracula as any}
           customStyle={{
             fontSize: '1rem',
-            fontFamily: 'FiraCode Nerd Font; monospace',
+            fontFamily: 'en',
           }}
           language={match[1]}
           PreTag="div"

@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'en';
+    src: url('../ttf/en.ttf');
+}
+
+@font-face {
+    font-family: 'zh';
+    src: url('../ttf/zh.ttf');
+}

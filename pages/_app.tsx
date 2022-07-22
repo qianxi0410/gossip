@@ -10,7 +10,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
     <Head>
       <title>{process.env.OWNER!}&apos;s website</title>
     </Head>
-    <div className="w-full sm:w-10/12 md:w-9/12 lg:w-7/12 container">
+    <div className="w-full sm:w-10/12 md:w-9/12 lg:w-7/12 container font-zh">
       <ThemeProvider>
         <Component {...pageProps} />
       </ThemeProvider>
