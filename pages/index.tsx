@@ -21,7 +21,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Index: NextPage<{ user: User; posts: Post[] }>
  = ({ user, posts }) => (
-   <div className="space-y-10">
+   <div className="space-y-10 dark:text-gray-400">
      <Header user={user} />
      <Posts posts={posts} />
      <CopyRight className="bottom-5" />

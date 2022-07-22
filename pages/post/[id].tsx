@@ -10,10 +10,10 @@ import type { NextPage } from 'next'
 const PostDetail: NextPage<{ post: Post }> = ({ post }) => (
   <div className="my-10 sm:my-20">
     <div className="flex flex-col items-start mb-10">
-      <div className="text-2xl sm:text-4xl font-bold">
+      <div className="text-2xl sm:text-4xl font-bold dark:text-gray-200">
         {post.title}
       </div>
-      <div className="sm:text-lg text-sm">
+      <div className="sm:text-lg text-sm dark:text-gray-400">
         <span>{post.author}</span> /&nbsp;
         <span>{formatDate(post.created_at)}</span> /&nbsp;
         <span>{formatDate(post.updated_at)}</span>
@@ -25,7 +25,7 @@ const PostDetail: NextPage<{ post: Post }> = ({ post }) => (
     </Markdown>
 
     <Link href="/">
-      <a className="float-right mt-10 sm:text-2xl text-xl text-gray-500 hover:text-black hover:underline hover:underline-offset-4 transition-all">cd ..</a>
+      <a className="float-right mt-10 sm:text-2xl text-xl text-gray-500 hover:text-black hover:underline hover:underline-offset-4 transition-all dark:text-gray-400 dark:hover:text-gray-100">cd ..</a>
     </Link>
 
     <CopyRight className="bottom-0 mt-20" />

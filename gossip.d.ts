@@ -14,4 +14,7 @@ declare module 'gossip' {
     content: string
     author: string
   }
+  
+  export type Theme = 'light' | 'dark'
 }
+
