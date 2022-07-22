@@ -4,7 +4,7 @@ import type { NextPage } from 'next'
 
 const NotFound: NextPage = () => (
 
-  <div className="flex flex-col xl:flex-row xl:mt-56 mt-28 xl:space-x-5 space-y-2">
+  <div className="flex flex-col xl:flex-row xl:mt-56 mt-28 xl:space-x-5 space-y-2 font-en">
     <span className="text-6xl lg:text-8xl text-gray-900 dark:text-gray-300">Oops!</span>
     <br />
     <div className="xl:self-center text-lg xl:text-xl dark:text-gray-400">

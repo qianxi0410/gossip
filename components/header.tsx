@@ -24,7 +24,7 @@ const Header: React.FC<{ user: User }> = ({ user }) => {
               layout="fill"
             />
           </div>
-          <div className="text-center sm:float-right sm:text-start sm:ml-3 sm:self-center">
+          <div className="text-center font-en sm:float-right sm:text-start sm:ml-3 sm:self-center">
             <span className="text-xl font-medium">{user.nick_name}</span>
             <br />
             <span className="italic">{user.bio}</span>
