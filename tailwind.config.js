@@ -11,6 +11,10 @@ module.exports = {
       padding: '2rem',
     },
     extend: {},
+    fontFamily: {
+      en: ['en'],
+      zh: ['zh'],
+    },
   },
   plugins: [],
   darkMode: ['class', '[data-theme="dark"]'],
