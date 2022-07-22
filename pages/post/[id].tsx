@@ -1,3 +1,4 @@
+import Comments from '../../components/comments'
 import CopyRight from '../../components/copyright'
 import Markdown from '../../components/markdown'
 import { fetchPaths, fetchPost, formatDate } from '../../lib'
@@ -23,6 +24,8 @@ const PostDetail: NextPage<{ post: Post }> = ({ post }) => (
     <Markdown className="font-normal">
       {post.content}
     </Markdown>
+
+    <Comments issueNumber={post.id} />
 
     <Link href="/">
       <a className="float-right mt-10 sm:text-2xl text-xl text-gray-500 hover:text-black hover:underline hover:underline-offset-4 transition-all dark:text-gray-400 dark:hover:text-gray-100">cd ..</a>
