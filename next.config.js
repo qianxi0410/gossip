@@ -14,6 +14,9 @@ const nextConfig = {
       unoptimized: true,
     },
   },
+  basePath: process.env.DEPLOY_TARGET === 'gh-pages' && process.env.REPO !== `${process.env.OWNER}.github.io`
+    ? `/${process.env.REPO}`
+    : '',
 }
 
 // eslint-disable-next-line unicorn/prefer-module

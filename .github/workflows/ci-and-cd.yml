@@ -110,6 +110,8 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - lint
+    env:
+      DEPLOY_TARGET: gh-pages
     steps:
       - uses: actions/checkout@v2
 
@@ -137,9 +139,15 @@ jobs:
 
       - name: Run build
         run: pnpm run build
+        env:
+          OWNER: ${{ github.actor }}
+          REPO: ${{ github.event.repository.name }}
 
       - name: Run export
         run: pnpm run export
+        env:
+          OWNER: ${{ github.actor }}
+          REPO: ${{ github.event.repository.name }}
 
       - name: Run deploy
         uses: peaceiris/actions-gh-pages@v3
