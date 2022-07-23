@@ -1,4 +1,3 @@
-import React from 'react'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism'
@@ -93,7 +92,7 @@ const P: React.FC<Pick<DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, H
 )
 
 const A: React.FC<Pick<DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>, 'key' | keyof AnchorHTMLAttributes<HTMLAnchorElement>> & ReactMarkdownProps> = ({ children, ...properties }) => (
-  <a {...properties} className="text-blue-500 hover:text-blue-800 transition-colors">{children}</a>
+  <a {...properties} className="text-blue-500 hover:text-blue-800 transition-colors duration-200">{children}</a>
 )
 
 const Strong: React.FC<Pick<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, 'key' | keyof HTMLAttributes<HTMLElement>> & ReactMarkdownProps> = ({ children, ...properties }) => (
