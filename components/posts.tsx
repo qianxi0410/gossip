@@ -18,14 +18,23 @@ interface BlockProperties {
   items: Post[]
 }
 
-const PostBlock: React.FC<BlockProperties> = ({ year, items }) => (
+const PostBlock: React.FC<BlockProperties> = ({ year, items }) => {
+  // get year of now
+  const now = new Date()
+  const currentYear = now.getFullYear()
+
+  // if year is current year, don't show year
+  const showYear = year !== currentYear.toString()
+
+  return (
   <div className="flex flex-col my-10">
-    <div className="sm:text-3xl text-2xl font-medium sm:my-3 my-1 italic text-gray-500 dark:text-gray-100">{year}</div>
+    {showYear && <div className="sm:text-3xl text-2xl font-medium sm:my-3 my-1 italic text-gray-500 dark:text-gray-100">{year}</div>}
     {items.map(item => (
       <PostItem key={item.id} post={item} />
     ))}
   </div>
-)
+  )
+}
 
 const Posts: React.FC<{ posts: Post[] }> = ({ posts }) => {
   const map = groupByDate(posts)
