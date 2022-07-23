@@ -100,7 +100,7 @@ jobs:
           vercel-project-id: ${{ secrets.PROJECT_ID}} # Required
           github-token: ${{ secrets.GITHUB_TOKEN }}
           # eslint-disable-next-line max-len
-          vercel-args: --prod --build-env OWNER=${{ github.actor }} --build-env REPO=qianx1.xyz # Optional
+          vercel-args: --prod --build-env OWNER=${{ github.actor }} --build-env REPO=${{ github.event.repository.name }}
           working-directory: ./
           alias-domains: |
             qianx1.xyz

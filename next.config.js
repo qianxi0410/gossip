@@ -7,8 +7,7 @@ const nextConfig = {
   env: {
     OWNER: process.env.OWNER,
     REPO: process.env.REPO,
-    // todo: add labels limit
-    LABELS: '',
+    LABELS: 'published',
   },
   experimental: {
     images: {
