@@ -20,7 +20,7 @@ const Comments: React.FC<Properties> = ({ issueNumber }) => {
 
         scriptElement.setAttribute('repo', `${process.env.OWNER!}/${process.env.REPO!}`)
         scriptElement.setAttribute('issue-number', `${issueNumber}`)
-        scriptElement.setAttribute('theme', theme === 'dark' ? 'github-dark' : 'github-light')
+        scriptElement.setAttribute('theme', theme === 'dark' ? 'photon-dark' : 'github-light')
         element.append(scriptElement)
 
         return () => {

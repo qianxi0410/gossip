@@ -19,6 +19,7 @@ specifiers:
   react-syntax-highlighter: ^15.5.0
   rehype-raw: ^6.1.1
   remark-gfm: ^3.0.1
+  remark-github: ^11.2.4
   tailwindcss: ^3.1.6
   typescript: 4.7.4
 
@@ -32,6 +33,7 @@ dependencies:
   react-syntax-highlighter: 15.5.0_react@18.2.0
   rehype-raw: 6.1.1
   remark-gfm: 3.0.1
+  remark-github: 11.2.4
 
 devDependencies:
   '@qianxi0410/eslint-config': 5.3.0_eslint@8.20.0+typescript@4.7.4
@@ -3797,6 +3799,16 @@ packages:
       unified: 10.1.2
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /remark-github/11.2.4:
+    resolution: {integrity: sha512-GJjWFpwqdrHHhPWqMbb8+lqFLiHQ9pCzUmXmRrhMFXGpYov5n2ljsZzuWgXlfzArfQYkiKIZczA2I8IHYMHqCA==}
+    dependencies:
+      '@types/mdast': 3.0.10
+      mdast-util-find-and-replace: 2.2.1
+      mdast-util-to-string: 3.1.0
+      unified: 10.1.2
+      unist-util-visit: 4.1.0
     dev: false
 
   /remark-parse/10.0.1:
