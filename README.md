@@ -1,5 +1,3 @@
 # gossip
 
-A simple blog engine based on GitHub.
-
-still work in progress.
+A simple blog engine based on GitHub Issue System.
