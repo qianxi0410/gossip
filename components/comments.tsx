@@ -1,4 +1,5 @@
 import { useTheme } from 'next-themes'
+import { useEffect, useRef } from 'react'
 
 interface Properties {
   issueNumber: number
@@ -6,29 +7,37 @@ interface Properties {
 
 const Comments: React.FC<Properties> = ({ issueNumber }) => {
   const { theme } = useTheme()
+  const elementReference = useRef<HTMLDivElement>(null)
+  const t = theme === 'dark' ? 'github-dark' : 'github-light'
+  const className = '.utterances-frame'
 
-  return (
-    <div
-      className="mt-5"
-      ref={(element) => {
-        if (!element || element.childNodes.length > 0) return
+  // first load
+  useEffect(() => {
+    if (!elementReference.current) return
 
-        const scriptElement = document.createElement('script')
-        scriptElement.src = 'https://utteranc.es/client.js'
-        scriptElement.async = true
-        scriptElement.crossOrigin = 'anonymous'
+    const scriptElement = document.createElement('script')
+    scriptElement.src = 'https://utteranc.es/client.js'
+    scriptElement.async = true
+    scriptElement.crossOrigin = 'anonymous'
+    scriptElement.setAttribute('repo', `${process.env.OWNER}/${process.env.REPO}`)
+    scriptElement.setAttribute('issue-number', issueNumber.toString())
+    scriptElement.setAttribute('theme', t)
+    elementReference.current.append(scriptElement)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [issueNumber])
 
-        scriptElement.setAttribute('repo', `${process.env.OWNER!}/${process.env.REPO!}`)
-        scriptElement.setAttribute('issue-number', `${issueNumber}`)
-        scriptElement.setAttribute('theme', theme === 'dark' ? 'photon-dark' : 'github-light')
-        element.append(scriptElement)
+  // when theme change
+  useEffect(() => {
+    if (document.querySelector(className)) {
+      const iframe = document.querySelector<HTMLIFrameElement>('.utterances-frame')
 
-        return () => {
-          scriptElement.firstChild!.remove()
-        }
-      }}
-    />
-  )
+      if (!iframe) return
+
+      iframe?.contentWindow?.postMessage({ type: 'set-theme', theme: t }, 'https://utteranc.es')
+    }
+  }, [t])
+
+  return <div ref={elementReference} />
 }
 
 export default Comments
