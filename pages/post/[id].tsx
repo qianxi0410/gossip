@@ -3,6 +3,7 @@ import CopyRight from '../../components/copyright'
 import Moon from '../../components/icons/moon'
 import Sun from '../../components/icons/sun'
 import Markdown from '../../components/markdown'
+import Reactions from '../../components/reactions'
 import { fetchPaths, fetchPost, formatDate } from '../../lib'
 
 import { useTheme } from 'next-themes'
@@ -16,9 +17,9 @@ const PostDetail: NextPage<{ post: Post }> = ({ post }) => {
 
   return (
     <div className="my-10 sm:my-20">
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-row justify-between mb-5">
 
-        <div className="flex flex-col items-start mb-10">
+        <div className="flex flex-col items-start">
           <div className="text-2xl sm:text-4xl font-bold dark:text-gray-200">
             {post.title}
           </div>
@@ -29,7 +30,7 @@ const PostDetail: NextPage<{ post: Post }> = ({ post }) => {
           </div>
         </div>
 
-        <div className="self-auto text-sm sm:text-lg">
+        <div className="text-sm sm:text-lg self-center">
           {
             theme === 'light'
               ? <Moon width="2em" height="2em" onClick={() => setTheme('dark')} />
@@ -38,6 +39,20 @@ const PostDetail: NextPage<{ post: Post }> = ({ post }) => {
         </div>
 
       </div>
+
+      {
+        post.reactions.total_count > 0
+        && <Reactions
+          nice={post.reactions['+1']}
+          bad={post.reactions['-1']}
+          hooray={post.reactions.hooray}
+          rocket={post.reactions.rocket}
+          eyes={post.reactions.eyes}
+          laugh={post.reactions.laugh}
+          confused={post.reactions.confused}
+          heart={post.reactions.heart}
+        />
+      }
 
       <Markdown className="font-normal">
         {post.content}

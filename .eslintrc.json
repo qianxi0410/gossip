@@ -1,6 +1,7 @@
 {
   "extends": ["next/core-web-vitals", "@qianxi0410"],
   "rules": {
+    "indent": ["error", 2],
     "import/extensions": [
       "error",
       "ignorePackages",

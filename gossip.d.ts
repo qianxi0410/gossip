@@ -13,6 +13,17 @@ declare module 'gossip' {
     updated_at: string
     content: string
     author: string
+    reactions: {
+      "+1": number
+      "-1": number
+      "confused": number
+      "eyes": number
+      "heart": number
+      "hooray": number
+      "laugh": number
+      "rocket": number
+      "total_count": number
+    }
   }
   
   export type Theme = 'light' | 'dark'

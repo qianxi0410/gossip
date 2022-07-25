@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/indent */
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism'
@@ -14,20 +15,20 @@ import type { ReactMarkdownOptions } from 'react-markdown/lib/react-markdown'
 
 const Hx: HeadingComponent = ({ level, children }) => {
   switch (level) {
-    case 1:
-      return <h1 className="sm:text-3xl text-2xl font-bold my-5 dark:text-gray-300">{children}</h1>
-    case 2:
-      return <h2 className="sm:text-2xl text-xl font-bold my-4 dark:text-gray-300">{children}</h2>
-    case 3:
-      return <h3 className="sm:text-xl text-lg font-bold my-3 dark:text-gray-300">{children}</h3>
-    case 4:
-      return <h4 className="sm:text-xl text-lg font-bold my-3 dark:text-gray-300">{children}</h4>
-    case 5:
-      return <h5 className="sm:text-xl text-lg font-bold my-2 dark:text-gray-300">{children}</h5>
-    case 6:
-      return <h6 className="sm:text-xl text-lg font-bold my-2 dark:text-gray-300">{children}</h6>
-    default:
-      return <p>error</p>
+  case 1:
+    return <h1 className="sm:text-3xl text-2xl font-bold my-5 dark:text-gray-300">{children}</h1>
+  case 2:
+    return <h2 className="sm:text-2xl text-xl font-bold my-4 dark:text-gray-300">{children}</h2>
+  case 3:
+    return <h3 className="sm:text-xl text-lg font-bold my-3 dark:text-gray-300">{children}</h3>
+  case 4:
+    return <h4 className="sm:text-xl text-lg font-bold my-3 dark:text-gray-300">{children}</h4>
+  case 5:
+    return <h5 className="sm:text-xl text-lg font-bold my-2 dark:text-gray-300">{children}</h5>
+  case 6:
+    return <h6 className="sm:text-xl text-lg font-bold my-2 dark:text-gray-300">{children}</h6>
+  default:
+    return <p>error</p>
   }
 }
 
@@ -35,24 +36,24 @@ const Code: CodeComponent = ({ inline, className, children, ...properties }) => 
   const match = /language-(\w+)/.exec(className || '') || ['', 'shell']
   return (!inline)
     ? (
-        <SyntaxHighlighter
-          showLineNumbers
-          style={dracula as any}
-          codeTagProps={{
-            className: 'font-en text-md',
-          }}
-          language={match[1]}
-          PreTag="div"
-          {...properties}
-        >
-          {String(children).replace(/\n$/, '')}
-        </SyntaxHighlighter>
-      )
+      <SyntaxHighlighter
+        showLineNumbers
+        style={dracula as any}
+        codeTagProps={{
+          className: 'font-en text-md',
+        }}
+        language={match[1]}
+        PreTag="div"
+        {...properties}
+      >
+        {String(children).replace(/\n$/, '')}
+      </SyntaxHighlighter>
+    )
     : (
-        <code className="bg-green-100 dark:bg-black dark:text-green-400" {...properties}>
-          {children}
-        </code>
-      )
+      <code className="bg-green-100 dark:bg-black dark:text-green-400" {...properties}>
+        {children}
+      </code>
+    )
 }
 
 const Li: LiComponent = ({ checked, children }) => {
@@ -65,14 +66,14 @@ const Li: LiComponent = ({ checked, children }) => {
     )
   }
   return (
-      <li className="ml-2">
-        {children}
-      </li>
+    <li className="ml-2">
+      {children}
+    </li>
   )
 }
 
 const Ol: OrderedListComponent = ({ children, ...properties }) => (
-   <ol {...properties} className="sm:text-xl text-lg list-decimal pl-5 dark:text-gray-300">{children}</ol>
+  <ol {...properties} className="sm:text-xl text-lg list-decimal pl-5 dark:text-gray-300">{children}</ol>
 )
 
 const Ul: UnorderedListComponent = ({ children, ...properties }) => (
@@ -80,7 +81,7 @@ const Ul: UnorderedListComponent = ({ children, ...properties }) => (
 )
 
 const Del: React.FC<Pick<DetailedHTMLProps<DelHTMLAttributes<HTMLModElement>, HTMLModElement>, 'key' | keyof DelHTMLAttributes<HTMLModElement>> & ReactMarkdownProps> = ({ children, ...properties }) => (
-    <del {...properties} className="dark:text-gray-400">{children}</del>
+  <del {...properties} className="dark:text-gray-400">{children}</del>
 )
 
 const Em: React.FC<Pick<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, 'key' | keyof HTMLAttributes<HTMLElement>> & ReactMarkdownProps> = ({ children, ...properties }) => (
@@ -100,7 +101,7 @@ const Strong: React.FC<Pick<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLE
 )
 
 const BlockQuote: React.FC<Pick<DetailedHTMLProps<BlockquoteHTMLAttributes<HTMLQuoteElement>, HTMLQuoteElement>, 'key' | keyof BlockquoteHTMLAttributes<HTMLQuoteElement>> & ReactMarkdownProps> = ({ children, ...properties }) => (
-    <blockquote {...properties} className="border-l-4 border-green-200 dark:border-green-600 bg-green-50 py-1 px-5 rounded-xl my-2 dark:bg-green-900">{children}</blockquote>
+  <blockquote {...properties} className="border-l-4 border-green-200 dark:border-green-600 bg-green-50 py-1 px-5 rounded-xl my-2 dark:bg-green-900">{children}</blockquote>
 )
 
 const Hr: React.FC<Pick<DetailedHTMLProps<HTMLAttributes<HTMLHRElement>, HTMLHRElement>, 'key' | keyof HTMLAttributes<HTMLHRElement>> & ReactMarkdownProps> = ({ ...properties }) => (

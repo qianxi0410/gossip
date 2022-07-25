@@ -55,6 +55,9 @@ export const fetchPosts = async () => {
       updated_at: p.updated_at,
       content: p.body!,
       author: process.env.OWNER!,
+      reactions: {
+        ...p.reactions!,
+      },
     })
   }
 
@@ -76,6 +79,9 @@ export const fetchPost = async (id: string) => {
     updated_at: data.updated_at,
     content: data.body!,
     author: process.env.OWNER!,
+    reactions: {
+      ...data.reactions!,
+    },
   }
 
   return post
