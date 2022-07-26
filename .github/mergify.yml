@@ -5,4 +5,4 @@ pull_request_rules:
       - check-success=lint (ubuntu-latest, 17.x)
     actions:
       merge:
-        method: merge
+        method: squash

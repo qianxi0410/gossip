@@ -60,7 +60,7 @@ jobs:
         run: pnpm run lint
 
   deploy-to-vercel:
-    if: ${{ github.actor }} == '{{ github.repository.owner.login }}'
+    if: ${{ github.actor }} == ${{ github.repository.owner.login }}
     strategy:
       matrix:
         os: [ubuntu-latest]
@@ -107,7 +107,7 @@ jobs:
             qianx1.xyz
 
   deploy-to-gh-page:
-    if: ${{ github.actor }} == '{{ github.repository.owner.login }}'
+    if: ${{ github.actor }} == ${{ github.repository.owner.login }}
     runs-on: ubuntu-latest
     needs:
       - lint
