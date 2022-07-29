@@ -1,5 +1,6 @@
 import Comments from '../../components/comments'
 import CopyRight from '../../components/copyright'
+import Home from '../../components/icons/home'
 import Moon from '../../components/icons/moon'
 import Sun from '../../components/icons/sun'
 import Markdown from '../../components/markdown'
@@ -30,7 +31,8 @@ const PostDetail: NextPage<{ post: Post }> = ({ post }) => {
           </div>
         </div>
 
-        <div className="text-sm sm:text-lg self-center">
+        <div className="text-sm sm:text-lg self-center flex flex-row space-x-2 sm:space-x-5">
+          <Home width="2em" height="2em" />
           {
             theme === 'light'
               ? <Moon width="2em" height="2em" onClick={() => setTheme('dark')} />
