@@ -20,7 +20,7 @@ const PostDetail: NextPageWithLayout<{ post: Post }> = ({ post }) => {
       <div className="flex flex-row justify-between mb-5">
 
         <div className="flex flex-col items-start">
-          <div className="text-2xl sm:text-4xl font-bold dark:text-gray-200">
+          <div className="text-4xl sm:text-5xl font-bold dark:text-gray-200">
             {post.title}
           </div>
           <div className="sm:text-lg text-sm dark:text-gray-400">
