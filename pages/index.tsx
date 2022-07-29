@@ -1,11 +1,10 @@
-import CopyRight from '../components/copyright'
 import Header from '../components/header'
+import Layout from '../components/layout'
 import Posts from '../components/posts'
 import { fetchPosts, fetchUser } from '../lib'
 
-import type { Post, User } from 'gossip'
-
-import type { GetStaticProps, NextPage } from 'next'
+import type { NextPageWithLayout, Post, User } from 'gossip'
+import type { GetStaticProps } from 'next'
 
 export const getStaticProps: GetStaticProps = async () => {
   const user = await fetchUser()
@@ -19,13 +18,14 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-const Index: NextPage<{ user: User; posts: Post[] }>
+const Index: NextPageWithLayout<{ user: User; posts: Post[] }>
  = ({ user, posts }) => (
-   <div className="space-y-10 dark:text-gray-400">
+   <div className="space-y-10 dark:text-gray-400 font-zh">
      <Header user={user} />
      <Posts posts={posts} />
-     <CopyRight className="bottom-5" />
    </div>
  )
+
+Index.getLayout = page => <Layout middle={page} />
 
 export default Index

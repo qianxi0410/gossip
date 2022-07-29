@@ -1,8 +1,8 @@
 import Comments from '../../components/comments'
-import CopyRight from '../../components/copyright'
 import Home from '../../components/icons/home'
 import Moon from '../../components/icons/moon'
 import Sun from '../../components/icons/sun'
+import Layout from '../../components/layout'
 import Markdown from '../../components/markdown'
 import Reactions from '../../components/reactions'
 import { fetchPaths, fetchPost, formatDate } from '../../lib'
@@ -10,14 +10,13 @@ import { fetchPaths, fetchPost, formatDate } from '../../lib'
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
 
-import type { Post } from 'gossip'
-import type { NextPage } from 'next'
+import type { NextPageWithLayout, Post } from 'gossip'
 
-const PostDetail: NextPage<{ post: Post }> = ({ post }) => {
+const PostDetail: NextPageWithLayout<{ post: Post }> = ({ post }) => {
   const { theme, setTheme } = useTheme()
 
   return (
-    <div className="my-10 sm:my-20">
+    <div className="my-10 sm:my-20 font-zh">
       <div className="flex flex-row justify-between mb-5">
 
         <div className="flex flex-col items-start">
@@ -65,11 +64,11 @@ const PostDetail: NextPage<{ post: Post }> = ({ post }) => {
       <Link href="/">
         <a className="float-right mt-10 sm:text-2xl text-xl text-gray-500 hover:text-black hover:underline hover:underline-offset-4 transition-all dark:text-gray-400 dark:hover:text-gray-100">cd ..</a>
       </Link>
-
-      <CopyRight className="bottom-0 mt-20" />
     </div>
   )
 }
+
+PostDetail.getLayout = page => <Layout middle={page} />
 
 // get all the posts id from the github issues
 export const getStaticPaths = async () => ({

@@ -27,5 +27,11 @@ declare module 'gossip' {
   }
   
   export type Theme = 'light' | 'dark'
+  
+  import { NextPage } from "next"
+
+  export type NextPageWithLayout<T={}> = NextPage<T> & {
+    getLayout?: (page: React.ReactElement) => React.ReactNode
+  }
 }
 
