@@ -6,7 +6,7 @@ import type { Post } from 'gossip'
 
 const PostItem: React.FC<{ post: Post }> = ({ post }) => (
   <div className="flex flex-row flex-wrap my-1 justify-between">
-    <Link href={`/post/${post.id}`} className="cursor-pointer">
+    <Link href={`/post/${post.title}`} className="cursor-pointer">
       <a className="sm:text-3xl text-2xl font-medium hover:underline hover:underline-offset-auto transition ease-in-out duration-200">{post.title}</a>
     </Link>
     <span className="text-xl sm:text-2xl italic font-light self-center">{formatDate(post.created_at)}</span>
