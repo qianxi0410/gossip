@@ -1,3 +1,4 @@
+import Back2Top from '../back2top'
 import CopyRight from '../copyright'
 
 import type { ReactNode } from 'react'
@@ -15,6 +16,7 @@ const Layout: React.FC<{ middle: ReactNode; left?: ReactNode; right?: ReactNode 
 
     <div className="md:col-span-1 lg:col-span-2 sm:block hidden">{right}</div>
 
+    <Back2Top />
   </div>
 
 )
