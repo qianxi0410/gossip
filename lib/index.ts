@@ -1,8 +1,12 @@
+import Cache from './cache'
+
 import { Octokit } from 'octokit'
 
 import type { Post, User } from 'gossip'
 
 const cli = new Octokit()
+
+const cache = new Cache<Post>()
 
 // fetch the user info
 export const fetchUser = async () => {
@@ -31,7 +35,7 @@ export const fetchPaths = async () => {
 
   return posts.map(post => ({
     params: {
-      id: post.number.toString(),
+      id: post.title,
     },
   }))
 }
@@ -65,26 +69,39 @@ export const fetchPosts = async () => {
 }
 
 // fetch post data
-export const fetchPost = async (id: string) => {
-  const { data } = await cli.rest.issues.get({
-    owner: process.env.OWNER!,
-    repo: process.env.REPO!,
-    issue_number: Number(id),
-  })
+export const fetchPost = async (title: string) => {
+  if (cache.keys().length > 0) {
+    const post = cache.get(title)
 
-  const post: Post = {
-    id: data.number,
-    title: data.title,
-    created_at: data.created_at,
-    updated_at: data.updated_at,
-    content: data.body!,
-    author: process.env.OWNER!,
-    reactions: {
-      ...data.reactions!,
-    },
+    if (post) return post
   }
 
-  return post
+  const { data } = await cli.rest.issues.listForRepo({
+    owner: process.env.OWNER!,
+    repo: process.env.REPO!,
+    labels: process.env.LABELS!,
+    per_page: 100,
+  })
+
+  const posts: Post[] = []
+
+  for (const p of data) {
+    posts.push({
+      id: p.number,
+      title: p.title,
+      created_at: p.created_at,
+      updated_at: p.updated_at,
+      content: p.body!,
+      author: process.env.OWNER!,
+      reactions: {
+        ...p.reactions!,
+      },
+    })
+  }
+
+  for (const p of posts) cache.set(p.title, p)
+
+  return cache.get(title)
 }
 
 // format date string

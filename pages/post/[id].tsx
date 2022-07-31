@@ -44,6 +44,7 @@ const PostDetail: NextPageWithLayout<{ post: Post }> = ({ post }) => {
       {
         post.reactions.total_count > 0
         && <Reactions
+          id={post.id}
           nice={post.reactions['+1']}
           bad={post.reactions['-1']}
           hooray={post.reactions.hooray}
