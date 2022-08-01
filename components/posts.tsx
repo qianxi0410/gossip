@@ -14,7 +14,7 @@ const Tags = ({ tags }: { tags: string[] }) => {
     <div className="lg:inline-block hidden space-x-3">
       &nbsp;&nbsp;
       {tags.map(tag => (
-        <Link key={tag} href="">
+        <Link key={tag} href={`/tag/${tag}`}>
           <a className="hover:text-blue-900 transition-colors duration-200 text-blue-500 text-xl">#{tag}</a>
         </Link>
       ))}
