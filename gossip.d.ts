@@ -23,7 +23,8 @@ declare module 'gossip' {
       "laugh": number
       "rocket": number
       "total_count": number
-    }
+    },
+    labels: string[]
   }
   
   export type Theme = 'light' | 'dark'

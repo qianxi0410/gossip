@@ -4,11 +4,32 @@ import Link from 'next/link'
 
 import type { Post } from 'gossip'
 
+const Tags = ({ tags }: { tags: string[] }) => {
+  const specialTags = process.env.LABELS!.split(',')
+  const isSpecialTag = (tag: string) => specialTags.includes(tag)
+
+  tags = tags.filter(tag => !isSpecialTag(tag))
+
+  return (
+    <div className="lg:inline-block hidden space-x-3">
+      &nbsp;&nbsp;
+      {tags.map(tag => (
+        <Link key={tag} href="">
+          <a className="hover:text-blue-900 transition-colors duration-200 text-blue-500 text-xl">#{tag}</a>
+        </Link>
+      ))}
+    </div>
+  )
+}
+
 const PostItem: React.FC<{ post: Post }> = ({ post }) => (
   <div className="flex flex-row flex-wrap my-1 justify-between">
-    <Link href={`/post/${post.title}`} className="cursor-pointer">
-      <a className="sm:text-3xl text-2xl font-medium hover:underline hover:underline-offset-auto transition ease-in-out duration-200">{post.title}</a>
-    </Link>
+    <div className="space-x-2">
+      <Link href={`/post/${post.title}`} className="cursor-pointer">
+        <a className="sm:text-3xl text-2xl font-medium hover:underline hover:underline-offset-auto">{post.title}</a>
+      </Link>
+      <Tags tags={post.labels} />
+    </div>
     <span className="text-xl sm:text-2xl italic font-light self-center">{formatDate(post.created_at)}</span>
   </div>
 )
