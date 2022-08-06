@@ -3,12 +3,15 @@ import Layout from '../components/layout'
 import Posts from '../components/posts'
 import { fetchPosts, fetchUser } from '../lib'
 
+import genRSS from '../lib/rss'
+
 import type { NextPageWithLayout, Post, User } from 'gossip'
 import type { GetStaticProps } from 'next'
 
 export const getStaticProps: GetStaticProps = async () => {
-  const user = await fetchUser()
-  const posts = await fetchPosts()
+  const [user, posts] = await Promise.all([fetchUser(), fetchPosts()])
+
+  genRSS(posts, user)
 
   return {
     props: {
