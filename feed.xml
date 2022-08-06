@@ -4,16 +4,16 @@
         <description><![CDATA[Wubalubadubdub]]></description>
         <link>https://qianx1.xyz</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 06 Aug 2022 10:35:47 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 06 Aug 2022 10:45:56 GMT</lastBuildDate>
         <atom:link href="https://qianx1.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sat, 06 Aug 2022 10:35:47 GMT</pubDate>
+        <pubDate>Sat, 06 Aug 2022 10:45:56 GMT</pubDate>
         <copyright><![CDATA[All rights reserved 2022, qianxi0410]]></copyright>
         <language><![CDATA[zh-CN]]></language>
         <item>
             <title><![CDATA[终端工具集]]></title>
             <description><![CDATA[terminal, linux]]></description>
-            <link>https://qianx1.xyz/blogs/终端工具集</link>
-            <guid isPermaLink="true">https://qianx1.xyz/blogs/终端工具集</guid>
+            <link>https://qianx1.xyz/post/终端工具集</link>
+            <guid isPermaLink="true">https://qianx1.xyz/post/终端工具集</guid>
             <pubDate>Sun, 24 Jul 2022 14:45:54 GMT</pubDate>
         </item>
     </channel>
