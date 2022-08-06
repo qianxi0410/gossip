@@ -2,6 +2,7 @@ import Github from './icons/github'
 
 import Moon from './icons/moon'
 
+import RSS from './icons/rss'
 import Sun from './icons/sun'
 
 import { useTheme } from 'next-themes'
@@ -31,12 +32,13 @@ const Header: React.FC<{ user: User }> = ({ user }) => {
           </div>
         </div>
         <div className="self-center text-sm sm:text-lg flex flex-row space-x-5">
+          <RSS />
+          <Github width="2em" height="2em" />
           {
             theme === 'light'
               ? <Moon width="2em" height="2em" onClick={() => setTheme('dark')} />
               : <Sun width="2em" height="2em" onClick={() => setTheme('light')} />
           }
-          <Github width="2em" height="2em" />
         </div>
       </div>
 
