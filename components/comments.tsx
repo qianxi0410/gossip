@@ -13,7 +13,7 @@ const Comments: React.FC<Properties> = ({ issueNumber }) => {
 
   // first load
   useEffect(() => {
-    if (!elementReference.current) return
+    if (!elementReference.current || process.env.comment !== 'true') return
 
     const scriptElement = document.createElement('script')
     scriptElement.src = 'https://utteranc.es/client.js'
@@ -31,7 +31,7 @@ const Comments: React.FC<Properties> = ({ issueNumber }) => {
     if (document.querySelector(className)) {
       const iframe = document.querySelector<HTMLIFrameElement>('.utterances-frame')
 
-      if (!iframe) return
+      if (!iframe || process.env.comment !== 'true') return
 
       iframe?.contentWindow?.postMessage({ type: 'set-theme', theme: t }, 'https://utteranc.es')
     }

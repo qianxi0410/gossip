@@ -22,6 +22,9 @@ const Back2Top = () => {
     }
   }, [])
 
+  // eslint-disable-next-line react/jsx-no-useless-fragment
+  if (process.env.back2top !== 'true') return <></>
+
   return (
     <div className="bottom-10 right-10 cursor-pointer fixed hidden lg:block" onClick={handleClick}>
       <Triangle className={`${show ? 'opacity-100' : 'opacity-0'} duration-700 transition-opacity ease-in-out`} />

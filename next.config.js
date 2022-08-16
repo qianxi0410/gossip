@@ -8,6 +8,12 @@ const nextConfig = {
     OWNER: process.env.OWNER,
     REPO: process.env.REPO,
     LABELS: 'published',
+
+    // config
+    comment: 'true', // true or false
+    theme: 'both', // 'light' or 'dark' or 'both'
+    rss: 'true', // true or false
+    back2top: 'true', // true or false
   },
   experimental: {
     images: {
