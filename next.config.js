@@ -7,6 +7,7 @@ const nextConfig = {
   env: {
     OWNER: process.env.OWNER,
     REPO: process.env.REPO,
+    ACCESS_TOKEN: process.env.ACCESS_TOKEN,
     LABELS: 'published',
 
     // config

@@ -4,15 +4,13 @@ import { Octokit } from 'octokit'
 
 import type { Post, User } from 'gossip'
 
-const cli = new Octokit()
+const cli = new Octokit({ auth: process.env.ACCESS_TOKEN })
 
 const cache = new Cache<Post>()
 
 // fetch the user info
 export const fetchUser = async () => {
-  const { data } = await cli.rest.users.getByUsername({
-    username: process.env.OWNER!,
-  })
+  const { data } = await cli.rest.users.getAuthenticated()
 
   const user: User = {
     login: data.login,
