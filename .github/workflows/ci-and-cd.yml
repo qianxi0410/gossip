@@ -100,7 +100,7 @@ jobs:
           vercel-project-id: ${{ secrets.PROJECT_ID}} # Required
           github-token: ${{ secrets.GITHUB_TOKEN }}
           # eslint-disable-next-line max-len
-          vercel-args: --prod --build-env OWNER=${{ github.actor }} --build-env REPO=${{ github.event.repository.name }} --build-env ACCESS_TOKEN=${{ secrets.ACCESS_TOKEN }}
+          vercel-args: --prod -b OWNER=${{ github.actor }} -b REPO=${{ github.event.repository.name }}
           working-directory: ./
           alias-domains: |
             qianx1.xyz
@@ -110,11 +110,6 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - lint
-    env:
-      DEPLOY_TARGET: gh-pages
-      OWNER: ${{ github.actor }}
-      REPO: ${{ github.event.repository.name }}
-      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
     steps:
       - uses: actions/checkout@v2
 
@@ -142,6 +137,10 @@ jobs:
 
       - name: Run build
         run: pnpm run build
+        env:
+          DEPLOY_TARGET: gh-pages
+          OWNER: ${{ github.actor }}
+          REPO: ${{ github.event.repository.name }}
 
       - name: Run export
         run: pnpm run export

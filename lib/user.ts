@@ -4,7 +4,9 @@ import type { User } from 'gossip'
 
 // fetch the user info
 const fetchUser = async () => {
-  const { data } = await cli.rest.users.getAuthenticated()
+  const { data } = await cli.rest.users.getByUsername({
+    username: process.env.OWNER!,
+  })
 
   const user: User = {
     login: data.login,
