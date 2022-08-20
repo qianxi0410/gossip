@@ -1,6 +1,6 @@
 import type { SVGProps } from 'react'
 
-const RSS: React.FC<SVGProps<SVGSVGElement>> = (properties) => {
+const RSS: React.FC<SVGProps<SVGSVGElement>> = ({ width, height }) => {
   // eslint-disable-next-line react/jsx-no-useless-fragment
   if (process.env.rss !== 'true') return <></>
 
@@ -8,12 +8,11 @@ const RSS: React.FC<SVGProps<SVGSVGElement>> = (properties) => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
-      width="2em"
-      height="2em"
+      width={width}
+      height={height}
       viewBox="0 0 24 24"
       className="cursor-pointer"
       onClick={() => window.open('./feed.xml', '_blank')}
-      {...properties}
     >
       <path
         fill="currentColor"

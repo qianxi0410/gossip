@@ -1,9 +1,7 @@
 import Comments from '../../components/comments'
-import Home from '../../components/icons/home'
 import Layout from '../../components/layout'
 import Markdown from '../../components/markdown'
 import Reactions from '../../components/reactions'
-import Theme from '../../components/theme'
 import { fetchPaths, fetchPost, formatDate } from '../../lib'
 
 import Link from 'next/link'
@@ -11,25 +9,15 @@ import Link from 'next/link'
 import type { NextPageWithLayout, Post } from 'gossip'
 
 const PostDetail: NextPageWithLayout<{ post: Post }> = ({ post }) => (
-  <div className="my-10 sm:my-20 font-zh">
-    <div className="flex flex-row justify-between mb-5">
-
-      <div className="flex flex-col items-start">
-        <div className="text-4xl sm:text-5xl font-bold dark:text-gray-200">
-          {post.title}
-        </div>
-        <div className="sm:text-lg text-sm dark:text-gray-400">
-          <span>{post.author}</span> /&nbsp;
-          <span>{formatDate(post.created_at)}</span> /&nbsp;
-          <span>{formatDate(post.updated_at)}</span>
-        </div>
+  <div className="mb-10 sm:mb-20 font-zh">
+    <div className="flex flex-col mb-5 items-center">
+      <div className="text-5xl sm:text-6xl font-bold dark:text-gray-200">
+        {post.title}
       </div>
-
-      <div className="text-sm sm:text-lg self-center flex flex-row space-x-2 sm:space-x-5">
-        <Home width="2em" height="2em" />
-        <Theme />
+      <div className="sm:text-xl text-lg mt-3 dark:text-gray-400">
+        <span>{formatDate(post.created_at)}</span> /&nbsp;
+        <span>{formatDate(post.updated_at)}</span>
       </div>
-
     </div>
 
     {
