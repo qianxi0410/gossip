@@ -22,3 +22,7 @@ export const groupByDate = (posts: Post[]) => {
 
   return map
 }
+
+export const isGithubChannel = () => process.env.DEPLOY_TARGET === 'gh-pages'
+
+export const isSpecialRepo = () => process.env.REPO === `${process.env.OWNER}.github.io`
