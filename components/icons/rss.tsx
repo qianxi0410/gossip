@@ -12,7 +12,7 @@ const RSS: React.FC<SVGProps<SVGSVGElement>> = (properties) => {
       height="2em"
       viewBox="0 0 24 24"
       className="cursor-pointer"
-      onClick={() => window.open('/feed.xml', '_blank')}
+      onClick={() => window.open('./feed.xml', '_blank')}
       {...properties}
     >
       <path
