@@ -48,7 +48,7 @@ const PostBlock: React.FC<BlockProperties> = ({ year, items }) => {
   const showYear = year !== currentYear.toString()
 
   return (
-    <div className="flex flex-col my-10">
+    <div className="flex flex-col mb-10">
       {showYear && <div className="sm:text-3xl text-2xl font-medium sm:my-3 my-1 italic text-gray-500 dark:text-gray-100">{year}</div>}
       {items.map(item => (
         <PostItem key={item.id} post={item} />

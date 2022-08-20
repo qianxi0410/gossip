@@ -1,21 +1,21 @@
 import Back2Top from '../back2top'
-import CopyRight from '../copyright'
+import Footer from '../footer'
+
+import Header from '../header'
 
 import type { ReactNode } from 'react'
 
-const Layout: React.FC<{ middle: ReactNode; left?: ReactNode; right?: ReactNode }>
-= ({ middle, left, right }) => (
-  <div className="grid grid-cols-12 container auto-cols-min">
+const Layout: React.FC<{ middle: ReactNode }>
+= ({ middle }) => (
 
-    <div className="md:col-span-1 lg:col-span-2 sm:block hidden">{left}</div>
+  <div className="flex flex-col h-screen container w-full md:w-3/4 lg:w-3/5">
+    <Header />
 
-    <div className="md:col-span-10 lg:col-span-8 col-span-full">
+    <main className="grow">
       {middle}
-      <CopyRight className="text-sm sm:text-md mt-8 mb-12 text-gray-700 dark:text-gray-500" />
-    </div>
+    </main>
 
-    <div className="md:col-span-1 lg:col-span-2 sm:block hidden">{right}</div>
-
+    <Footer />
     <Back2Top />
   </div>
 

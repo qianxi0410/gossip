@@ -1,22 +1,13 @@
-import Home from '../../components/icons/home'
 import Layout from '../../components/layout'
-
 import Posts from '../../components/posts'
-import Theme from '../../components/theme'
 import { fetchPostsByTag, fetchTagPaths } from '../../lib'
 
 import type { NextPageWithLayout, Post } from 'gossip'
 
 const Tag: NextPageWithLayout<{ posts: Post[]; tag: string }> = ({ tag, posts }) => (
   <div className="font-zh">
-    <div className="mt-16 flex flex-row justify-between">
-      <span className="text-6xl">
-          #{tag}
-      </span>
-      <div className="self-center flex flex-row space-x-5">
-        <Home width="2em" height="2em" />
-        <Theme />
-      </div>
+    <div className="mb-5 text-center text-4xl">
+      #{tag}
     </div>
     <Posts posts={posts} />
   </div>
