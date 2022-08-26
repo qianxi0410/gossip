@@ -24,7 +24,7 @@ on:
 jobs:
   lint:
     # eslint-disable-next-line max-len
-    if: (github.event_name == 'push' || github.event_name == 'pull_request' || contains(github.event.issue.labels.*.name, 'published')) && !contains(github.event.head_commit.message, 'chore')
+    if: (github.event_name == 'workflow_dispatch' || github.event_name == 'push' || github.event_name == 'pull_request' || contains(github.event.issue.labels.*.name, 'published')) && !contains(github.event.head_commit.message, 'chore')
     strategy:
       matrix:
         os: [ubuntu-latest]
