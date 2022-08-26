@@ -8,7 +8,12 @@
 
 ## 使用方法
 
-clone 或者 fork 这个仓库
+1. clone 或者 fork 这个仓库
+
+2. 在你的仓库中，允许新建 issue，允许 Action 允许。
+
+- 允许新建 issue: 在 Settings -> General -> Features -> Issues -> check `Issues`
+- 允许 Action 运行: 在 Actions -> 点击 `Allow all actions`
 
 ### vercel channel
 
@@ -30,6 +35,8 @@ clone 或者 fork 这个仓库
 2. 推荐你将项目的仓库命名为`[your-username].github.io`，当然其他任意名称均可。
 3. 如果是推荐项目名称，此时你的固定的 url 地址即为`https://[your-username].github.io`，如果是其他名称，比如`blog`仓库，此时你的固定的 url 地址即为`https://[your-username].github.io/blog`。
 4. 在你的仓库中，新建 issue，带上`published`标签，然后等待推送即可。
+5. 允许`GitHub Pages`预览：Settings -> Pages -> Deploy from a branch -> gh-pages -> / (root) -> save
+6. 如果你有域名的话，可以自行配置域名解析。
 
 ## 配置项
 
