@@ -4,11 +4,18 @@
         <description><![CDATA[Wubalubadubdub]]></description>
         <link>https://qianx1.xyz</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 26 Aug 2022 15:15:43 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 27 Aug 2022 03:24:42 GMT</lastBuildDate>
         <atom:link href="https://qianx1.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Fri, 26 Aug 2022 15:15:43 GMT</pubDate>
+        <pubDate>Sat, 27 Aug 2022 03:24:42 GMT</pubDate>
         <copyright><![CDATA[All rights reserved 2022, qianxi0410]]></copyright>
         <language><![CDATA[zh-CN]]></language>
+        <item>
+            <title><![CDATA[docker-proxy]]></title>
+            <description><![CDATA[docker, proxy]]></description>
+            <link>https://qianx1.xyz/post/docker-proxy</link>
+            <guid isPermaLink="true">https://qianx1.xyz/post/docker-proxy</guid>
+            <pubDate>Sat, 27 Aug 2022 03:22:57 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[终端工具集]]></title>
             <description><![CDATA[terminal, linux]]></description>
