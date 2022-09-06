@@ -18,15 +18,19 @@
 ### vercel channel
 
 1. 注释掉[ci-and-cd](./.github/workflows/ci-and-cd.yml)文件里面的 github channel 部分的 yml 代码。
-2. 与常规的 vercel 触发部署不同，本项目使用 ci 进行触发，所以你需要配置好一些 GitHub Action 变量。
+2. 你需要有一个固定的 url 地址，将本项目内的所有`qianx1.xyz`(2 处)都替换成自己的 url 地址。这个地址必须解析到你自己的 vercel 服务器上。如何解析请自行 google。
+3. 与常规的 vercel 触发部署不同，本项目使用 ci 进行触发，所以你需要配置好一些 GitHub Action 变量。
 
 - [ ] ORG_ID
 - [ ] PROJECT_ID
 - [ ] VERCEL_TOKEN
 
-这些都是 Action 必须的变量，你可以参考[vercel-action](https://github.com/amondnet/vercel-action)这个 repo 的指导来获取这些变量。
+变量的获取方式为：
 
-3. 你需要有一个固定的 url 地址，将本项目内的所有`qianx1.xyz`(2 处)都替换成自己的 url 地址。这个地址必须解析到你自己的 vercel 服务器上。如何解析请自行 google。
+- clone 项目到本地
+- 配置好`.env`文件中的内容
+- 运行`vercel`命令，成功之后，找到项目根目录下的`.vercel/project.json`，里面有`orgId`和`projectId`，将这两个值分别赋值给`ORG_ID`和`PROJECT_ID`。此外，VERCEL_TOKEN 的获取方式需要去 vercel 官网获取。
+
 4. 在你的仓库中，新建 issue，带上`published`标签，然后等待推送即可。
 
 ### github channel
