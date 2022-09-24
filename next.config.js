@@ -16,6 +16,7 @@ const nextConfig = {
     back2top: 'true', // true or false
     mail: 'liuyihan0410@gmail.com', // your email
     twitter: '', // your twitter
+    bio: '',
   },
   experimental: {
     images: {

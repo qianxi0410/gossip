@@ -9,12 +9,11 @@ const Document: NextPage = () => {
   if (isGithubChannel() && !isSpecialRepo()) href = './favicon.ico'
 
   return (
-
     <Html lang="zh-CN" id="html">
       <Head>
         <link rel="shortcut icon" href={href} />
       </Head>
-      <body className="dark:bg-black bg-gray-50">
+      <body className="dark:bg-gray-900 bg-slate-50">
         <Main />
         <NextScript />
       </body>

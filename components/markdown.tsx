@@ -16,17 +16,17 @@ import type { ReactMarkdownOptions } from 'react-markdown/lib/react-markdown'
 const Hx: HeadingComponent = ({ level, children }) => {
   switch (level) {
   case 1:
-    return <h1 className="sm:text-4xl text-3xl font-bold my-5 dark:text-gray-300">{children}</h1>
+    return <h1 className="sm:text-4xl text-3xl mb-4 mt-12 font-bold dark:text-gray-300">{children}</h1>
   case 2:
-    return <h2 className="sm:text-3xl text-2xl font-bold my-4 dark:text-gray-300">{children}</h2>
+    return <h2 className="sm:text-4xl text-3xl mb-4 mt-12 font-bold dark:text-gray-300">{children}</h2>
   case 3:
-    return <h3 className="sm:text-2xl text-xl font-bold my-3 dark:text-gray-300">{children}</h3>
+    return <h3 className="sm:text-2xl text-xl font-bold my-8 dark:text-gray-300">{children}</h3>
   case 4:
-    return <h4 className="sm:text-2xl text-xl font-bold my-3 dark:text-gray-300">{children}</h4>
+    return <h4 className="sm:text-2xl text-xl font-bold my-8 dark:text-gray-300">{children}</h4>
   case 5:
-    return <h5 className="sm:text-2xl text-xl font-bold my-2 dark:text-gray-300">{children}</h5>
+    return <h5 className="sm:text-2xl text-xl font-bold my-8 dark:text-gray-300">{children}</h5>
   case 6:
-    return <h6 className="sm:text-2xl text-xl font-bold my-2 dark:text-gray-300">{children}</h6>
+    return <h6 className="sm:text-2xl text-xl font-bold my-8 dark:text-gray-300">{children}</h6>
   default:
     return <p>error</p>
   }
@@ -50,8 +50,8 @@ const Code: CodeComponent = ({ inline, className, children, ...properties }) => 
       </SyntaxHighlighter>
     )
     : (
-      <code className="bg-green-100 dark:bg-black dark:text-green-400" {...properties}>
-        {children}
+      <code className="text-gray-600 dark:text-white" {...properties}>
+      `{children}`
       </code>
     )
 }
@@ -73,7 +73,7 @@ const Li: LiComponent = ({ checked, children }) => {
 }
 
 const Ol: OrderedListComponent = ({ children, ...properties }) => (
-  <ol {...properties} className="sm:text-xl text-lg list-decimal pl-5 dark:text-gray-300">{children}</ol>
+  <ol {...properties} className="sm:text-2xl text-xl my-4 list-decimal pl-5 dark:text-gray-300">{children}</ol>
 )
 
 const Ul: UnorderedListComponent = ({ children, ...properties }) => (
@@ -89,7 +89,7 @@ const Em: React.FC<Pick<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLEleme
 )
 
 const P: React.FC<Pick<DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>, 'key' | keyof HTMLAttributes<HTMLParagraphElement>> & ReactMarkdownProps> = ({ children, ...properties }) => (
-  <p {...properties} className="sm:text-2xl text-xl my-4 dark:text-gray-300">{children}</p>
+  <p {...properties} className="sm:text-2xl text-xl mt-4 dark:text-gray-300">{children}</p>
 )
 
 const A: React.FC<Pick<DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>, 'key' | keyof AnchorHTMLAttributes<HTMLAnchorElement>> & ReactMarkdownProps> = ({ children, ...properties }) => (
@@ -101,7 +101,7 @@ const Strong: React.FC<Pick<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLE
 )
 
 const BlockQuote: React.FC<Pick<DetailedHTMLProps<BlockquoteHTMLAttributes<HTMLQuoteElement>, HTMLQuoteElement>, 'key' | keyof BlockquoteHTMLAttributes<HTMLQuoteElement>> & ReactMarkdownProps> = ({ children, ...properties }) => (
-  <blockquote {...properties} className="border-l-4 border-green-200 dark:border-green-600 bg-green-50 py-1 px-5 rounded-xl my-2 dark:bg-green-900">{children}</blockquote>
+  <blockquote {...properties} className="border-l-4 pl-4 border-gray-300 dark:border-gray-600 rounded-l-md my-6">{children}</blockquote>
 )
 
 const Hr: React.FC<Pick<DetailedHTMLProps<HTMLAttributes<HTMLHRElement>, HTMLHRElement>, 'key' | keyof HTMLAttributes<HTMLHRElement>> & ReactMarkdownProps> = ({ ...properties }) => (
