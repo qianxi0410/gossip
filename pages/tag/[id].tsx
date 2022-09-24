@@ -5,7 +5,7 @@ import { fetchPostsByTag, fetchTagPaths } from '../../lib'
 import type { NextPageWithLayout, Post } from 'gossip'
 
 const Tag: NextPageWithLayout<{ posts: Post[]; tag: string }> = ({ tag, posts }) => (
-  <div className="font-zh">
+  <div>
     <div className="mb-5 text-center text-4xl">
       #{tag}
     </div>

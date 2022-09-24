@@ -26,7 +26,7 @@ const PostItem: React.FC<{ post: Post }> = ({ post }) => (
   <div className="flex flex-row flex-wrap my-1 justify-between">
     <div className="space-x-2">
       <Link href={`/post/${post.title}`} className="cursor-pointer">
-        <a className="sm:text-2xl text-xl font-medium dark:hover:text-white dark:text-gray-400 hover:text-gray-600 duration-200">{post.title}</a>
+        <a className="sm:text-2xl text-xl dark:hover:text-white dark:text-gray-400 hover:text-gray-600 duration-200">{post.title}</a>
       </Link>
       <Tags tags={post.labels} />
     </div>

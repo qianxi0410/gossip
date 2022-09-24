@@ -8,7 +8,7 @@ import type { ReactNode } from 'react'
 const Layout: React.FC<{ middle: ReactNode }>
 = ({ middle }) => (
 
-  <div className="flex flex-col h-screen container w-full md:w-1/2 lg:w-5/12">
+  <div className="flex flex-col h-screen container w-full md:w-3/4 xl:w-1/2">
     <Header />
 
     <main className="grow">

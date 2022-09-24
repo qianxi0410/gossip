@@ -40,7 +40,7 @@ const Index: NextPageWithLayout<{ posts: Post[]; user: User }>
          <hr className="dark:border-dashed" />
        </div>
 
-       <div className="space-y-10 dark:text-gray-400 font-zh">
+       <div className="space-y-10 dark:text-gray-400">
          <Posts posts={posts} />
        </div>
      </div>
