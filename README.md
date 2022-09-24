@@ -8,4 +8,4 @@ see: [usage](./usage.md)
 
 ## preview
 
-see: [qianx1.xyz](https://qianx1.xyz)
+see: [qianxi.me](https://qianxi.me)

@@ -5,7 +5,7 @@ import { writeFileSync } from 'node:fs'
 import type { Post, User } from 'gossip'
 
 const genRSS = (posts: Post[], user: User) => {
-  const siteURL = 'https://qianx1.xyz'
+  const siteURL = 'https://qianxi.me'
 
   const feed = new RSS({
     title: process.env.OWNER!,
