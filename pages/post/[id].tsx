@@ -11,7 +11,7 @@ import type { NextPageWithLayout, Post } from 'gossip'
 const PostDetail: NextPageWithLayout<{ post: Post }> = ({ post }) => (
   <div className="mb-10 sm:mb-20 font-zh">
     <div className="flex flex-col mb-5 items-center">
-      <div className="text-3xl sm:text-6xl font-bold dark:text-gray-200">
+      <div className="text-3xl sm:text-5xl font-bold dark:text-gray-200">
         {post.title}
       </div>
       <div className="sm:text-xl text-lg mt-3 dark:text-gray-400">
@@ -38,7 +38,7 @@ const PostDetail: NextPageWithLayout<{ post: Post }> = ({ post }) => (
     <Markdown className="font-normal">
       {post.content}
     </Markdown>
-
+    <br />
     <Comments issueNumber={post.id} />
 
     <Link href="/">
