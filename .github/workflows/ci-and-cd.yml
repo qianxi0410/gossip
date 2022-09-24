@@ -103,7 +103,7 @@ jobs:
           vercel-args: --prod -b OWNER=${{ github.actor }} -b REPO=${{ github.event.repository.name }}
           working-directory: ./
           alias-domains: |
-            qianx1.xyz
+            qianxi.me
 
   deploy-to-gh-page:
     if: github.event_name != 'pull_request'
