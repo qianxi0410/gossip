@@ -16,17 +16,17 @@ import type { ReactMarkdownOptions } from 'react-markdown/lib/react-markdown'
 const Hx: HeadingComponent = ({ level, children }) => {
   switch (level) {
   case 1:
-    return <h1 className="sm:text-4xl text-3xl mb-4 mt-12 font-bold dark:text-gray-300">{children}</h1>
+    return <h1 className="sm:text-4xl text-3xl mb-4 mt-12 dark:text-gray-300">{children}</h1>
   case 2:
-    return <h2 className="sm:text-4xl text-3xl mb-4 mt-12 font-bold dark:text-gray-300">{children}</h2>
+    return <h2 className="sm:text-4xl text-3xl mb-4 mt-12 dark:text-gray-300">{children}</h2>
   case 3:
-    return <h3 className="sm:text-2xl text-xl font-bold my-8 dark:text-gray-300">{children}</h3>
+    return <h3 className="sm:text-2xl text-xl my-8 dark:text-gray-300">{children}</h3>
   case 4:
-    return <h4 className="sm:text-2xl text-xl font-bold my-8 dark:text-gray-300">{children}</h4>
+    return <h4 className="sm:text-2xl text-xl my-8 dark:text-gray-300">{children}</h4>
   case 5:
-    return <h5 className="sm:text-2xl text-xl font-bold my-8 dark:text-gray-300">{children}</h5>
+    return <h5 className="sm:text-2xl text-xl my-8 dark:text-gray-300">{children}</h5>
   case 6:
-    return <h6 className="sm:text-2xl text-xl font-bold my-8 dark:text-gray-300">{children}</h6>
+    return <h6 className="sm:text-2xl text-xl my-8 dark:text-gray-300">{children}</h6>
   default:
     return <p>error</p>
   }
@@ -73,7 +73,7 @@ const Li: LiComponent = ({ checked, children }) => {
 }
 
 const Ol: OrderedListComponent = ({ children, ...properties }) => (
-  <ol {...properties} className="sm:text-2xl text-xl my-4 list-decimal pl-5 dark:text-gray-300">{children}</ol>
+  <ol {...properties} className="sm:text-2xl text-xl my-4 list-decimal pl-10 dark:text-gray-300">{children}</ol>
 )
 
 const Ul: UnorderedListComponent = ({ children, ...properties }) => (

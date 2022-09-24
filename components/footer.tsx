@@ -11,7 +11,7 @@ const Footer = () => (
       {process.env.twitter && <Twitter width="1.8em" height="1.8em" />}
       <Github width="1.8em" height="1.8em" />
     </div>
-    <div className="mb-10 font-zh">
+    <div className="mb-10 font-en">
       ©{new Date().getFullYear()}. All rights reserved by <a href={`https://github.com/${process.env.OWNER}`} className="text-blue-500 hover:text-blue-900 transition-colors duration-300">{process.env.OWNER}</a>.
         Powered by <a href="https://github.com/qianxi0410/gossip" className="text-blue-500 hover:text-blue-900 transition-colors duration-300">Gossip</a>.
     </div>

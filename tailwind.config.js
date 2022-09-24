@@ -13,7 +13,6 @@ module.exports = {
     extend: {},
     fontFamily: {
       en: ['en'],
-      zh: ['zh'],
     },
   },
   plugins: [],
