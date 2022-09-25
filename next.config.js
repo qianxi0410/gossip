@@ -3,6 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: ['avatars.githubusercontent.com', 'raw.githubusercontent.com'],
+    unoptimized: true,
   },
   env: {
     OWNER: process.env.OWNER,
@@ -17,11 +18,6 @@ const nextConfig = {
     mail: 'liuyihan0410@gmail.com', // your email
     twitter: '', // your twitter
     bio: '',
-  },
-  experimental: {
-    images: {
-      unoptimized: true,
-    },
   },
   basePath: process.env.DEPLOY_TARGET === 'gh-pages' && process.env.REPO !== `${process.env.OWNER}.github.io`
     ? `/${process.env.REPO}`
