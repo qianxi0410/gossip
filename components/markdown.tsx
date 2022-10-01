@@ -16,17 +16,17 @@ import type { ReactMarkdownOptions } from 'react-markdown/lib/react-markdown'
 const Hx: HeadingComponent = ({ level, children }) => {
   switch (level) {
   case 1:
-    return <h1 className="sm:text-4xl text-3xl mb-4 mt-12 dark:text-gray-300">{children}</h1>
+    return <h1 className="sm:text-4xl text-3xl my-12 mb-6 dark:text-white font-medium">{children}</h1>
   case 2:
-    return <h2 className="sm:text-4xl text-3xl mb-4 mt-12 dark:text-gray-300">{children}</h2>
+    return <h2 className="sm:text-3xl text-2xl mt-12 mb-6 dark:text-white font-medium">{children}</h2>
   case 3:
-    return <h3 className="sm:text-2xl text-xl my-8 dark:text-gray-300">{children}</h3>
+    return <h3 className="sm:text-2xl text-2xl mt-12 mb-6 dark:text-white font-medium">{children}</h3>
   case 4:
-    return <h4 className="sm:text-2xl text-xl my-8 dark:text-gray-300">{children}</h4>
+    return <h4 className="sm:text-2xl text-2xl mt-12 mb-6 dark:text-white">{children}</h4>
   case 5:
-    return <h5 className="sm:text-2xl text-xl my-8 dark:text-gray-300">{children}</h5>
+    return <h5 className="sm:text-2xl text-xl mt-12 mb-6 dark:text-white">{children}</h5>
   case 6:
-    return <h6 className="sm:text-2xl text-xl my-8 dark:text-gray-300">{children}</h6>
+    return <h6 className="sm:text-2xl text-xl mt-12 mb-6 dark:text-white">{children}</h6>
   default:
     return <p>error</p>
   }
@@ -44,6 +44,12 @@ const Code: CodeComponent = ({ inline, className, children, ...properties }) => 
         }}
         language={match[1]}
         PreTag="div"
+        customStyle={
+          {
+            borderRadius: '0.5rem',
+            margin: '1.8rem 0',
+          }
+        }
         {...properties}
       >
         {String(children).replace(/\n$/, '')}
@@ -73,7 +79,7 @@ const Li: LiComponent = ({ checked, children }) => {
 }
 
 const Ol: OrderedListComponent = ({ children, ...properties }) => (
-  <ol {...properties} className="sm:text-2xl text-xl my-4 list-decimal pl-10 dark:text-gray-300">{children}</ol>
+  <ol {...properties} className="sm:text-xl text-lg my-4 list-decimal pl-10 dark:text-gray-300">{children}</ol>
 )
 
 const Ul: UnorderedListComponent = ({ children, ...properties }) => (
@@ -89,11 +95,11 @@ const Em: React.FC<Pick<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLEleme
 )
 
 const P: React.FC<Pick<DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>, 'key' | keyof HTMLAttributes<HTMLParagraphElement>> & ReactMarkdownProps> = ({ children, ...properties }) => (
-  <p {...properties} className="sm:text-2xl text-xl mt-4 dark:text-gray-300">{children}</p>
+  <p {...properties} className="sm:text-xl text-lg mt-4 dark:text-gray-300">{children}</p>
 )
 
 const A: React.FC<Pick<DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>, 'key' | keyof AnchorHTMLAttributes<HTMLAnchorElement>> & ReactMarkdownProps> = ({ children, ...properties }) => (
-  <a {...properties} className="text-blue-500 hover:text-blue-800 transition-colors duration-200">{children}</a>
+  <a {...properties} className="text-blue-500 hover:text-blue-800 after:content-['_↗'] transition-colors duration-200">{children}</a>
 )
 
 const Strong: React.FC<Pick<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, 'key' | keyof HTMLAttributes<HTMLElement>> & ReactMarkdownProps> = ({ children, ...properties }) => (
@@ -101,7 +107,7 @@ const Strong: React.FC<Pick<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLE
 )
 
 const BlockQuote: React.FC<Pick<DetailedHTMLProps<BlockquoteHTMLAttributes<HTMLQuoteElement>, HTMLQuoteElement>, 'key' | keyof BlockquoteHTMLAttributes<HTMLQuoteElement>> & ReactMarkdownProps> = ({ children, ...properties }) => (
-  <blockquote {...properties} className="border-l-4 pl-4 border-gray-300 dark:border-gray-600 rounded-l-md my-6">{children}</blockquote>
+  <blockquote {...properties} className="border-l-4 pl-4 border-gray-300 dark:border-gray-600 rounded-l-sm italic my-4">{children}</blockquote>
 )
 
 const Hr: React.FC<Pick<DetailedHTMLProps<HTMLAttributes<HTMLHRElement>, HTMLHRElement>, 'key' | keyof HTMLAttributes<HTMLHRElement>> & ReactMarkdownProps> = ({ ...properties }) => (

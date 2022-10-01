@@ -6,7 +6,7 @@ import type { NextPageWithLayout, Post } from 'gossip'
 
 const Tag: NextPageWithLayout<{ posts: Post[]; tag: string }> = ({ tag, posts }) => (
   <div>
-    <div className="mb-5 text-center text-4xl">
+    <div className="mb-5 text-center text-4xl dark:text-gray-400">
       #{tag}
     </div>
     <Posts posts={posts} />

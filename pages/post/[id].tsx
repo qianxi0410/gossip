@@ -9,9 +9,9 @@ import Link from 'next/link'
 import type { NextPageWithLayout, Post } from 'gossip'
 
 const PostDetail: NextPageWithLayout<{ post: Post }> = ({ post }) => (
-  <div className="mb-10 sm:mb-20">
-    <div className="flex flex-col mb-5 items-center">
-      <div className="text-3xl sm:text-5xl font-medium dark:text-gray-200">
+  <div>
+    <div className="flex flex-col mb-5">
+      <div className="text-3xl sm:text-5xl font-normal dark:text-gray-200">
         {post.title}
       </div>
       <div className="sm:text-xl text-lg mt-3 dark:text-gray-400">
@@ -20,6 +20,7 @@ const PostDetail: NextPageWithLayout<{ post: Post }> = ({ post }) => (
       </div>
     </div>
 
+    <br />
     {
       post.reactions.total_count > 0
         && <Reactions
