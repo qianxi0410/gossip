@@ -18,7 +18,7 @@
 ### vercel channel
 
 1. 注释掉[ci-and-cd](./.github/workflows/ci-and-cd.yml)文件里面的 github channel 部分的 yml 代码。
-2. 你需要有一个固定的 url 地址，将本项目内的所有`qianx1.me`(2 处)都替换成自己的 url 地址。这个地址必须解析到你自己的 vercel 服务器上。如何解析请自行 google。
+2. 你需要有一个固定的 url 地址，将本项目内的所有`qianxi.me`(2 处)都替换成自己的 url 地址。这个地址必须解析到你自己的 vercel 服务器上。如何解析请自行 google。
 3. 与常规的 vercel 触发部署不同，本项目使用 ci 进行触发，所以你需要配置好一些 GitHub Action 变量。
 
 - [ ] ORG_ID
