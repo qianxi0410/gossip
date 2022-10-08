@@ -1,8 +1,13 @@
+import { isGithubChannel, isSpecialRepo } from '../../lib'
+
 import type { SVGProps } from 'react'
 
 const RSS: React.FC<SVGProps<SVGSVGElement>> = ({ width, height }) => {
   // eslint-disable-next-line react/jsx-no-useless-fragment
   if (process.env.rss !== 'true') return <></>
+
+  let href = '/feed.xml'
+  if (isGithubChannel() && !isSpecialRepo()) href = `/${process.env.REPO}/feed.xml`
 
   return (
     <svg
@@ -12,7 +17,8 @@ const RSS: React.FC<SVGProps<SVGSVGElement>> = ({ width, height }) => {
       height={height}
       viewBox="0 0 24 24"
       className="cursor-pointer"
-      onClick={() => window.open('./feed.xml', '_blank')}
+      // eslint-disable-next-line security/detect-non-literal-fs-filename
+      onClick={() => window.open(href, '_blank')}
     >
       <path
         fill="currentColor"
