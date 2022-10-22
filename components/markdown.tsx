@@ -1,7 +1,10 @@
 /* eslint-disable @typescript-eslint/indent */
+import { useTheme } from 'next-themes'
+
+import { useEffect } from 'react'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+import { a11yDark as dark, prism as light } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import rehypeRaw from 'rehype-raw'
 import remarkGfm from 'remark-gfm'
 import remarkGithub from 'remark-github'
@@ -33,12 +36,18 @@ const Hx: HeadingComponent = ({ level, children }) => {
 }
 
 const Code: CodeComponent = ({ inline, className, children, ...properties }) => {
+  const { theme, setTheme } = useTheme()
   const match = /language-(\w+)/.exec(className || '') || ['', 'shell']
+
+  useEffect(() => {
+    setTheme(theme!)
+  }, [setTheme, theme])
+
   return (!inline)
     ? (
       <SyntaxHighlighter
         showLineNumbers
-        style={dracula as any}
+        style={theme === 'dark' ? dark as any : light as any}
         codeTagProps={{
           className: 'font-en text-md',
         }}

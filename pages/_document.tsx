@@ -13,7 +13,7 @@ const Document: NextPage = () => {
       <Head>
         <link rel="shortcut icon" href={href} />
       </Head>
-      <body className="dark:bg-gray-900 bg-slate-50">
+      <body className="dark:bg-black bg-slate-50">
         <Main />
         <NextScript />
       </body>
