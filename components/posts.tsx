@@ -14,8 +14,8 @@ const Tags = ({ tags }: { tags: string[] }) => {
     <div className="xl:inline-block hidden space-x-3">
       &nbsp;&nbsp;
       {tags.map(tag => (
-        <Link key={tag} href={`/tag/${tag}`}>
-          <a className="hover:text-blue-900 transition-colors duration-200 text-blue-500 text-md">#{tag}</a>
+        <Link key={tag} href={`/tag/${tag}`} className="hover:text-blue-900 transition-colors duration-200 text-blue-500 text-md">
+          #{tag}
         </Link>
       ))}
     </div>
@@ -25,8 +25,8 @@ const Tags = ({ tags }: { tags: string[] }) => {
 const PostItem: React.FC<{ post: Post }> = ({ post }) => (
   <div className="flex flex-row flex-wrap mt-1 justify-between">
     <div className="space-x-2">
-      <Link href={`/post/${post.title}`} className="cursor-pointer">
-        <a className="text-xl dark:hover:text-white dark:text-gray-400 hover:text-gray-600 duration-200">{post.title}</a>
+      <Link href={`/post/${post.title}`} className="cursor-pointer text-xl dark:hover:text-white dark:text-gray-400 hover:text-gray-600 duration-200">
+        {post.title}
       </Link>
       <Tags tags={post.labels} />
     </div>

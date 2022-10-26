@@ -7,7 +7,7 @@ const Header: React.FC = () => {
   const router = useRouter()
 
   const isHome = router.pathname === '/'
-  const backIcon = <div className="flex self-center flex-row justify-between"><Link href="/"><a className="md:text-2xl text-xl cursor-pointer hover:underline underline-offset-4 italic font-en">cd ..</a></Link></div>
+  const backIcon = <div className="flex self-center flex-row justify-between"><Link href="/" className="md:text-2xl text-xl cursor-pointer hover:underline underline-offset-4 italic font-en">cd ..</Link></div>
 
   return (
     <header>

@@ -11,7 +11,7 @@ const NotFound: NextPageWithLayout = () => (
     <div className="xl:self-center text-lg xl:text-xl dark:text-gray-400">
       Seem to have lost your way.
       <br />
-      Click <Link href="/"><a className="text-blue-600">here</a></Link> to go back to the home page.
+      Click <Link href="/" className="text-blue-600">here</Link> to go back to the home page.
     </div>
   </div>
 )
