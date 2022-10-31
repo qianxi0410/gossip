@@ -11,7 +11,7 @@
     "fix": "eslint --fix ."
   },
   "dependencies": {
-    "next": "13.0.0",
+    "next": "13.0.1",
     "next-themes": "^0.2.1",
     "octokit": "^2.0.10",
     "react": "18.2.0",
