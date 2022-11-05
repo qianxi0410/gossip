@@ -31,7 +31,7 @@ jobs:
         node-version: [17.x]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - uses: actions/setup-node@v2
         with:
@@ -68,7 +68,7 @@ jobs:
     needs:
       - lint
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - uses: actions/setup-node@v2
         with:
@@ -111,7 +111,7 @@ jobs:
     needs:
       - lint
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - uses: actions/setup-node@v2
         with:
