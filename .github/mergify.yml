@@ -1,7 +1,8 @@
 pull_request_rules:
-  - name: automatic merge for Dependabot pull requests
+  - name: automatic merge for renovate pull requests
     conditions:
       - author~=^renovate(|-preview)\[bot\]$
+      - label=dependencies
       - check-success=lint (ubuntu-latest, 17.x)
     actions:
       merge:
