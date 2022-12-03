@@ -92,7 +92,7 @@ const Ol: OrderedListComponent = ({ children, ...properties }) => (
 )
 
 const Ul: UnorderedListComponent = ({ children, ...properties }) => (
-  <ul {...properties} className="sm:text-xl text-lg list-disc pl-5 dark:text-gray-300">{children}</ul>
+  <ul {...properties} className="sm:text-xl text-lg list-disc pl-5 my-5 dark:text-gray-300">{children}</ul>
 )
 
 const Del: React.FC<Pick<DetailedHTMLProps<DelHTMLAttributes<HTMLModElement>, HTMLModElement>, 'key' | keyof DelHTMLAttributes<HTMLModElement>> & ReactMarkdownProps> = ({ children, ...properties }) => (
@@ -125,7 +125,7 @@ const Hr: React.FC<Pick<DetailedHTMLProps<HTMLAttributes<HTMLHRElement>, HTMLHRE
 
 const Img: React.FC<Pick<DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>, 'key' | keyof ImgHTMLAttributes<HTMLImageElement>> & ReactMarkdownProps> = ({ src, title, alt }) => (
   // eslint-disable-next-line @next/next/no-img-element
-  <img src={src!} className="w-11/12 mx-auto rounded-lg shadow-xl" loading="lazy" alt={alt} title={title} />
+  <img src={src!} className="w-11/12 lg:w-2/3 mx-auto my-3 rounded-lg shadow-xl" loading="lazy" alt={alt} title={title} />
 )
 
 const Table: React.FC< Pick<DetailedHTMLProps<TableHTMLAttributes<HTMLTableElement>, HTMLTableElement>, 'key' | keyof TableHTMLAttributes<HTMLTableElement>> & ReactMarkdownProps> = ({ children, ...properties }) => (
