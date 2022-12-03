@@ -42,7 +42,7 @@ const PostDetail: NextPageWithLayout<{ post: Post }> = ({ post }) => (
     <br />
     <Comments issueNumber={post.id} />
 
-    <Link href="/" className="float-right mt-10 sm:text-2xl text-xl text-gray-500 hover:text-black hover:underline hover:underline-offset-4 transition-all dark:text-gray-400 dark:hover:text-gray-100">
+    <Link href="/" className="float-right mt-10 sm:text-2xl text-xl text-gray-500 hover:text-black transition-colors duration-200 dark:text-gray-400 dark:hover:text-gray-100">
      cd ..
     </Link>
   </div>

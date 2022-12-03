@@ -30,7 +30,7 @@ const PostItem: React.FC<{ post: Post }> = ({ post }) => (
       </Link>
       <Tags tags={post.labels} />
     </div>
-    <span className="text-lg italic font-light self-center dark:text-gray-400">{formatDate(post.created_at)}</span>
+    <span className="text-lg self-center">{formatDate(post.created_at)}</span>
   </div>
 )
 
