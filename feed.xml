@@ -4,15 +4,16 @@
         <description><![CDATA[Ghost of the static type system]]></description>
         <link>https://qianxi.me</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 03 Dec 2022 12:58:41 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 03 Dec 2022 13:07:24 GMT</lastBuildDate>
         <atom:link href="https://qianxi.me/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sat, 03 Dec 2022 12:58:41 GMT</pubDate>
+        <pubDate>Sat, 03 Dec 2022 13:07:24 GMT</pubDate>
         <copyright><![CDATA[All rights reserved 2022, qianxi0410]]></copyright>
         <language><![CDATA[zh-CN]]></language>
         <item>
-            <title><![CDATA[可扩展hash]]></title>
-            <link>https://qianxi.me/post/可扩展hash</link>
-            <guid isPermaLink="true">https://qianxi.me/post/可扩展hash</guid>
+            <title><![CDATA[可扩展哈希]]></title>
+            <description><![CDATA[数据结构]]></description>
+            <link>https://qianxi.me/post/可扩展哈希</link>
+            <guid isPermaLink="true">https://qianxi.me/post/可扩展哈希</guid>
             <pubDate>Sat, 03 Dec 2022 12:56:29 GMT</pubDate>
         </item>
         <item>
