@@ -21,7 +21,12 @@ const Hx: HeadingComponent = ({ level, children }) => {
   case 1:
     return <h1 className="sm:text-4xl text-3xl my-12 mb-6 dark:text-white font-medium">{children}</h1>
   case 2:
-    return <h2 className="sm:text-3xl text-2xl mt-12 mb-6 dark:text-white font-medium">{children}</h2>
+    return (
+      <div className="mt-12 mb-6">
+        <h2 className="sm:text-3xl text-2xl dark:text-white font-medium">{children}</h2>
+        <hr className="dark:border-dashed mt-1" />
+      </div>
+    )
   case 3:
     return <h3 className="sm:text-2xl text-2xl mt-12 mb-6 dark:text-white font-medium">{children}</h3>
   case 4:
@@ -75,13 +80,13 @@ const Li: LiComponent = ({ checked, children }) => {
   // ordered represents the order of the list item
   if (checked !== null) {
     return (
-      <li className="list-none">
+      <li className="list-none my-1">
         {children}
       </li>
     )
   }
   return (
-    <li className="ml-2">
+    <li className="ml-2 my-1">
       {children}
     </li>
   )
@@ -125,7 +130,7 @@ const Hr: React.FC<Pick<DetailedHTMLProps<HTMLAttributes<HTMLHRElement>, HTMLHRE
 
 const Img: React.FC<Pick<DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>, 'key' | keyof ImgHTMLAttributes<HTMLImageElement>> & ReactMarkdownProps> = ({ src, title, alt }) => (
   // eslint-disable-next-line @next/next/no-img-element
-  <img src={src!} className="w-11/12 lg:w-2/3 mx-auto my-3 rounded-lg shadow-xl" loading="lazy" alt={alt} title={title} />
+  <img src={src!} className="w-11/12 lg:w-2/3 mx-auto my-3 rounded-lg" loading="lazy" alt={alt} title={title} />
 )
 
 const Table: React.FC< Pick<DetailedHTMLProps<TableHTMLAttributes<HTMLTableElement>, HTMLTableElement>, 'key' | keyof TableHTMLAttributes<HTMLTableElement>> & ReactMarkdownProps> = ({ children, ...properties }) => (

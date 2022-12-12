@@ -10,11 +10,11 @@ import type { NextPageWithLayout, Post } from 'gossip'
 
 const PostDetail: NextPageWithLayout<{ post: Post }> = ({ post }) => (
   <div>
-    <div className="flex flex-col mb-5">
-      <div className="text-3xl sm:text-5xl font-normal dark:text-gray-200">
+    <div className="flex flex-col mb-2">
+      <div className="text-4xl sm:text-4xl font-normal dark:text-gray-200">
         {post.title}
       </div>
-      <div className="sm:text-xl text-lg mt-3 dark:text-gray-400">
+      <div className="sm:text-lg text-sm mt-2 dark:text-gray-400">
         <span>{formatDate(post.created_at)}</span> /&nbsp;
         <span>{formatDate(post.updated_at)}</span>
       </div>
