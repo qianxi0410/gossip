@@ -23,12 +23,12 @@ const Hx: HeadingComponent = ({ level, children }) => {
   case 2:
     return (
       <div className="mt-12 mb-6">
-        <h2 className="sm:text-3xl text-2xl dark:text-white font-medium">{children}</h2>
+        <h2 className="sm:text-3xl text-2xl dark:text-white">{children}</h2>
         <hr className="dark:border-dashed mt-1" />
       </div>
     )
   case 3:
-    return <h3 className="sm:text-2xl text-2xl mt-12 mb-6 dark:text-white font-medium">{children}</h3>
+    return <h3 className="sm:text-2xl text-2xl mt-12 mb-6 dark:text-white">{children}</h3>
   case 4:
     return <h4 className="sm:text-2xl text-2xl mt-12 mb-6 dark:text-white">{children}</h4>
   case 5:
@@ -101,7 +101,7 @@ const Ul: UnorderedListComponent = ({ children, ...properties }) => (
 )
 
 const Del: React.FC<Pick<DetailedHTMLProps<DelHTMLAttributes<HTMLModElement>, HTMLModElement>, 'key' | keyof DelHTMLAttributes<HTMLModElement>> & ReactMarkdownProps> = ({ children, ...properties }) => (
-  <del {...properties} className="dark:text-gray-400">{children}</del>
+  <span {...properties} className="bg-white text-white hover:text-black duration-500 dark:text-black dark:bg-black hover:dark:text-gray-200 hover:dark:bg-black cursor-pointer">{children}</span>
 )
 
 const Em: React.FC<Pick<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, 'key' | keyof HTMLAttributes<HTMLElement>> & ReactMarkdownProps> = ({ children, ...properties }) => (
