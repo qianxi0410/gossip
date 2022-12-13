@@ -101,7 +101,7 @@ const Ul: UnorderedListComponent = ({ children, ...properties }) => (
 )
 
 const Del: React.FC<Pick<DetailedHTMLProps<DelHTMLAttributes<HTMLModElement>, HTMLModElement>, 'key' | keyof DelHTMLAttributes<HTMLModElement>> & ReactMarkdownProps> = ({ children, ...properties }) => (
-  <span {...properties} className="bg-white text-white hover:text-black duration-500 dark:text-black dark:bg-black hover:dark:text-gray-200 hover:dark:bg-black cursor-pointer">{children}</span>
+  <span {...properties} className="bg-slate-50 text-slate-50 hover:text-black duration-500 dark:text-black dark:bg-black hover:dark:text-gray-200 hover:dark:bg-black cursor-pointer">{children}</span>
 )
 
 const Em: React.FC<Pick<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, 'key' | keyof HTMLAttributes<HTMLElement>> & ReactMarkdownProps> = ({ children, ...properties }) => (
