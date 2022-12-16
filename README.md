@@ -12,7 +12,7 @@
   <img alt="posts number" src="https://img.shields.io/github/issues/qianxi0410/gossip/published?color=green&label=posts&style=flat-square" />
 </a>
 <a href="https://github.com/qianxi0410/gossip/blob/main/.github/workflows/ci-and-cd.yml">
-  <img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/qianxi0410/gossip/ci-and-cd?style=flat-square">
+  <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/qianxi0410/gossip/ci-and-cd.yml?branch=main">
 </a>
 <a href="https://github.com/qianxi0410/gossip/blob/main/LICENSE">
   <img alt="license" src="https://img.shields.io/github/license/qianxi0410/gossip?style=flat-square" />
