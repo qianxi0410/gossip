@@ -21,7 +21,8 @@
     "rehype-raw": "^6.1.1",
     "remark-gfm": "^3.0.1",
     "remark-github": "^11.2.4",
-    "rss": "^1.2.2"
+    "rss": "^1.2.2",
+    "sakana-widget": "^2.4.3"
   },
   "devDependencies": {
     "@qianxi0410/eslint-config": "^5.3.0",
