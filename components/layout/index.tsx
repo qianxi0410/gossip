@@ -3,6 +3,8 @@ import Footer from '../footer'
 
 import Header from '../header'
 
+import Sakana from '../sakana'
+
 import type { ReactNode } from 'react'
 
 const Layout: React.FC<{ middle: ReactNode }>
@@ -17,6 +19,7 @@ const Layout: React.FC<{ middle: ReactNode }>
 
     <Footer />
     <Back2Top />
+    <Sakana />
   </div>
 
 )
