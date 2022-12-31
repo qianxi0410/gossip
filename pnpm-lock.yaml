@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@qianxi0410/eslint-config': ^5.3.0
-  '@types/node': 18.11.17
+  '@types/node': 18.11.18
   '@types/react': 18.0.26
   '@types/react-dom': 18.0.10
   '@types/react-syntax-highlighter': ^15.5.5
@@ -42,7 +42,7 @@ dependencies:
 
 devDependencies:
   '@qianxi0410/eslint-config': 5.3.0_lzzuuodtsqwxnvqeq4g4likcqa
-  '@types/node': 18.11.17
+  '@types/node': 18.11.18
   '@types/react': 18.0.26
   '@types/react-dom': 18.0.10
   '@types/react-syntax-highlighter': 15.5.5
@@ -751,7 +751,7 @@ packages:
   /@types/jsonwebtoken/8.5.8:
     resolution: {integrity: sha512-zm6xBQpFDIDM6o9r6HSgDeIcLy82TKWctCXEPbJJcXb5AKmi5BNNdLXneixK4lplX3PqIVcwLBCGE/kAGnlD4A==}
     dependencies:
-      '@types/node': 18.11.17
+      '@types/node': 18.11.18
     dev: false
 
   /@types/lru-cache/5.1.1:
@@ -772,8 +772,8 @@ packages:
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
     dev: false
 
-  /@types/node/18.11.17:
-    resolution: {integrity: sha512-HJSUJmni4BeDHhfzn6nF0sVmd1SMezP7/4F0Lq+aXzmp2xm9O7WXrUtHW/CHlYVtZUbByEvWidHqRtcJXGF2Ng==}
+  /@types/node/18.11.18:
+    resolution: {integrity: sha512-DHQpWGjyQKSHj3ebjFI/wRKcqQcdR+MoFBygntYOZytCqNfkd2ZC4ARDJ2DQqhjH5p85Nnd3jhUJIXrszFX/JA==}
 
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
