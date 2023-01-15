@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/indent */
 import { useTheme } from 'next-themes'
-
 import { useEffect } from 'react'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
@@ -10,9 +9,7 @@ import remarkGfm from 'remark-gfm'
 import remarkGithub from 'remark-github'
 
 import type { AnchorHTMLAttributes, BlockquoteHTMLAttributes, DelHTMLAttributes, DetailedHTMLProps, HTMLAttributes, ImgHTMLAttributes, TableHTMLAttributes } from 'react'
-
-import type { CodeComponent, HeadingComponent, LiComponent, OrderedListComponent, SpecialComponents, TableCellComponent, UnorderedListComponent } from 'react-markdown/lib/ast-to-react'
-
+import type { CodeComponent, HeadingComponent, LiComponent, OrderedListComponent, SpecialComponents, TableDataCellComponent, TableHeaderCellComponent, UnorderedListComponent } from 'react-markdown/lib/ast-to-react'
 import type { NormalComponents, ReactMarkdownProps } from 'react-markdown/lib/complex-types'
 import type { ReactMarkdownOptions } from 'react-markdown/lib/react-markdown'
 
@@ -145,9 +142,9 @@ const Tbody: React.FC<Pick<DetailedHTMLProps<HTMLAttributes<HTMLTableSectionElem
   <tbody {...properties} className="text-center">{children}</tbody>
 )
 
-const Td: TableCellComponent = ({ children }) => <td className="border-solid border-x-2 border-y-2 dark:border-gray-900">{children}</td>
+const Td: TableDataCellComponent = ({ children }) => <td className="border-solid border-x-2 border-y-2 dark:border-gray-900">{children}</td>
 
-const Th: TableCellComponent = ({ children }) => <th className="border-solid border-x-2 border-y-2 dark:border-gray-900">{children}</th>
+const Th: TableHeaderCellComponent = ({ children }) => <th className="border-solid border-x-2 border-y-2 dark:border-gray-900">{children}</th>
 
 const components: Partial<Omit<NormalComponents, keyof SpecialComponents> & SpecialComponents> = {
   /* headings */
