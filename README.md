@@ -19,7 +19,7 @@
 </a>
 </p>
 
-A simple blog engine based on GitHub Issue System.
+A serverless static blog engine based on GitHub Issue System.
 
 ## usage
 
