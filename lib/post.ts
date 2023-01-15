@@ -1,9 +1,6 @@
-import Cache from './cache'
 import cli from './cli'
 
 import type { Post } from 'gossip'
-
-const cache = new Cache<Post>()
 
 // fetch the static ids
 export const fetchPaths = async () => {
@@ -55,42 +52,8 @@ export const fetchPosts = async () => {
 
 // fetch post data
 export const fetchPost = async (title: string) => {
-  if (cache.keys().length > 0) {
-    const post = cache.get(title)
-
-    if (post) return post
-  }
-
-  const { data } = await cli.rest.issues.listForRepo({
-    owner: process.env.OWNER!,
-    repo: process.env.REPO!,
-    labels: process.env.LABELS!,
-    per_page: 100,
-  })
-
-  const posts: Post[] = []
-
-  for (const p of data) {
-    posts.push({
-      id: p.number,
-      title: p.title,
-      created_at: p.created_at,
-      updated_at: p.updated_at,
-      content: p.body!,
-      author: process.env.OWNER!,
-      reactions: {
-        ...p.reactions!,
-      },
-      labels: p.labels!.map((l) => {
-        const r = l as { name: string }
-        return r.name
-      }),
-    })
-  }
-
-  for (const p of posts) cache.set(p.title, p)
-
-  return cache.get(title)
+  const posts = await fetchPosts()
+  return posts.find(post => post.title === title)
 }
 
 // fetch tags list
