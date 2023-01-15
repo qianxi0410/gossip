@@ -8,6 +8,11 @@ export const formatDate = (date: string) => {
   return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`
 }
 
+export const formatDateShort = (date: string) => {
+  const d = new Date(date)
+  return `${d.getMonth() + 1}月${d.getDate()}日`
+}
+
 // format post list content
 export const groupByDate = (posts: Post[]) => {
   const map = new Map<string, Post[]>()

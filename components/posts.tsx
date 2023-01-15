@@ -1,4 +1,4 @@
-import { formatDate, groupByDate } from '../lib'
+import { formatDateShort, groupByDate } from '../lib'
 
 import Link from 'next/link'
 
@@ -30,7 +30,7 @@ const PostItem: React.FC<{ post: Post }> = ({ post }) => (
       </Link>
       <Tags tags={post.labels} />
     </div>
-    <span className="text-lg self-center">{formatDate(post.created_at)}</span>
+    <span className="text-lg self-center">{formatDateShort(post.created_at)}</span>
   </div>
 )
 
