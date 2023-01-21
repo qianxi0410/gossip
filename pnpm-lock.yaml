@@ -6,7 +6,7 @@ specifiers:
   '@types/react': 18.0.26
   '@types/react-dom': 18.0.10
   '@types/react-syntax-highlighter': ^15.5.6
-  '@types/rss': ^0.0.29
+  '@types/rss': ^0.0.30
   autoprefixer: ^10.4.13
   eslint: 8.32.0
   eslint-config-next: 13.1.2
@@ -46,7 +46,7 @@ devDependencies:
   '@types/react': 18.0.26
   '@types/react-dom': 18.0.10
   '@types/react-syntax-highlighter': 15.5.6
-  '@types/rss': 0.0.29
+  '@types/rss': 0.0.30
   autoprefixer: 10.4.13_postcss@8.4.21
   eslint: 8.32.0
   eslint-config-next: 13.1.2_7uibuqfxkfaozanbtbziikiqje
@@ -812,8 +812,8 @@ packages:
       '@types/scheduler': 0.16.2
       csstype: 3.1.0
 
-  /@types/rss/0.0.29:
-    resolution: {integrity: sha512-9hAYKyOcoxWqkJMue6bi0fcNXxjJiRutVvqyImy732LmTCxRz9BYPmSmujG7uddK0ZEP/35K3QVZ0sfAVyPnQw==}
+  /@types/rss/0.0.30:
+    resolution: {integrity: sha512-RnWs98qajbcAZqie6EWYraJ2N+1Q1Wy9KN7HcVPJ//sYJGVjLjvkChZdeQPwf88xAcNUCcLXt6Zz3kiid7s/yw==}
     dev: true
 
   /@types/scheduler/0.16.2:
