@@ -4,11 +4,18 @@
         <description><![CDATA[I can do nothing.]]></description>
         <link>https://qianxi.me</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 15 Jan 2023 06:03:13 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 01 Feb 2023 08:45:27 GMT</lastBuildDate>
         <atom:link href="https://qianxi.me/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sun, 15 Jan 2023 06:03:13 GMT</pubDate>
+        <pubDate>Wed, 01 Feb 2023 08:45:27 GMT</pubDate>
         <copyright><![CDATA[All rights reserved 2023, qianxi0410]]></copyright>
         <language><![CDATA[zh-CN]]></language>
+        <item>
+            <title><![CDATA[使用null-ls来统一neovim的格式化方案]]></title>
+            <description><![CDATA[nvim]]></description>
+            <link>https://qianxi.me/post/使用null-ls来统一neovim的格式化方案</link>
+            <guid isPermaLink="true">https://qianxi.me/post/使用null-ls来统一neovim的格式化方案</guid>
+            <pubDate>Wed, 01 Feb 2023 08:43:38 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2022年终总结]]></title>
             <description><![CDATA[年终总结]]></description>
