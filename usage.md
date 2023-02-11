@@ -17,8 +17,8 @@
 
 ### vercel channel
 
-1. 注释掉[ci-and-cd](./.github/workflows/ci-and-cd.yml)文件里面的 github channel 部分的 yml 代码。
-2. 你需要有一个固定的 url 地址，将本项目内的所有`qianxi.me`(2 处)都替换成自己的 url 地址。这个地址必须解析到你自己的 vercel 服务器上。如何解析请自行 google。
+1. 注释掉[ci-and-cd](./.github/workflows/ci-and-cd.yml)文件里面的 github channel 部分的 yml 代码，并且去除 vercel channel 的注释。
+2. 你需要有一个固定的 url 地址，将 `rss.ts` 里面的地址和[ci-and-cd](./.github/workflows/ci-and-cd.yml)中的`alias-domains`替换成你自己的 url 地址。这个地址必须解析到你自己的 vercel 服务器上。如何解析请自行 google。
 3. 与常规的 vercel 触发部署不同，本项目使用 ci 进行触发，所以你需要配置好一些 GitHub Action 变量。
 
 - [ ] ORG_ID
@@ -35,7 +35,7 @@
 
 ### github channel
 
-1. 注释掉[ci-and-cd](./.github/workflows/ci-and-cd.yml)文件里面的 vercel channel 部分的 yml 代码。
+1. 默认只有 github channel 触发。
 2. 推荐你将项目的仓库命名为`[your-username].github.io`，当然其他任意名称均可。
 3. 如果是推荐项目名称，此时你的固定的 url 地址即为`https://[your-username].github.io`，如果是其他名称，比如`blog`仓库，此时你的固定的 url 地址即为`https://[your-username].github.io/blog`。
 4. 在你的仓库中，新建 issue，带上`published`标签，然后等待推送即可。
