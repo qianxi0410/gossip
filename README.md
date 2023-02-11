@@ -1,9 +1,6 @@
 # gossip
 
 <p align="center">
-<a href="https://qianxi.me">
-  <img alt="Website" src="https://img.shields.io/website?label=channel&style=flat-square&up_color=blue&up_message=vercel&url=https%3A%2F%2Fqianxi.me">
-</a>
 <a href="https://qianxi0410.github.io/gossip">
   <img alt="Website" src="https://img.shields.io/website?label=channel&style=flat-square&up_color=blue&up_message=gh%20pages&url=https%3A%2F%2Fqianxi0410.github.io%2Fgossip">
 </a>
@@ -27,4 +24,4 @@ see: [usage](./usage.md)
 
 ## preview
 
-see: [qianxi.me](https://qianxi.me)
+see: [github page](https://qianxi0410.github.io/gossip)
