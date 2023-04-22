@@ -32,7 +32,7 @@
     "@types/react-syntax-highlighter": "^15.5.6",
     "@types/rss": "^0.0.30",
     "autoprefixer": "^10.4.13",
-    "eslint": "8.38.0",
+    "eslint": "8.39.0",
     "eslint-config-next": "13.3.1",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.4",
