@@ -19,7 +19,7 @@
     "react-markdown": "^8.0.4",
     "react-syntax-highlighter": "^15.5.0",
     "rehype-raw": "^7.0.0",
-    "remark-gfm": "^3.0.1",
+    "remark-gfm": "^4.0.0",
     "remark-github": "^11.2.4",
     "rss": "^1.2.2",
     "sakana-widget": "^2.4.3"
