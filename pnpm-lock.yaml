@@ -33,8 +33,8 @@ dependencies:
     specifier: ^4.0.0
     version: 4.0.0
   remark-github:
-    specifier: ^11.2.4
-    version: 11.2.4
+    specifier: ^12.0.0
+    version: 12.0.0
   rss:
     specifier: ^1.2.2
     version: 1.2.2
@@ -684,7 +684,7 @@ packages:
   /@types/hast@3.0.0:
     resolution: {integrity: sha512-SoytUJRuf68HXYqcXicQIhCrLQjqeYU2anikr4G3p3Iz+OZO5QDQpDj++gv+RenHsnUBwNZ2dumBArF8VLSk2Q==}
     dependencies:
-      '@types/unist': 2.0.6
+      '@types/unist': 3.0.0
     dev: false
 
   /@types/json-schema@7.0.11:
@@ -704,7 +704,7 @@ packages:
   /@types/mdast@3.0.10:
     resolution: {integrity: sha512-W864tg/Osz1+9f4lrGTZpCSO5/z4608eUp19tbozkq2HJK6i3z1kT0H9tlADXuYIb1YYOBByU4Jsqkk75q48qA==}
     dependencies:
-      '@types/unist': 2.0.6
+      '@types/unist': 3.0.0
     dev: false
 
   /@types/mdast@4.0.0:
@@ -3455,14 +3455,6 @@ packages:
       unist-util-visit: 4.1.0
     dev: false
 
-  /mdast-util-find-and-replace@2.2.1:
-    resolution: {integrity: sha512-SobxkQXFAdd4b5WmEakmkVoh18icjQRxGy5OWTCzgsLRm1Fu/KCtwD1HIQSsmq5ZRjVH0Ehwg6/Fn3xIUk+nKw==}
-    dependencies:
-      escape-string-regexp: 5.0.0
-      unist-util-is: 5.1.1
-      unist-util-visit-parents: 5.1.0
-    dev: false
-
   /mdast-util-find-and-replace@3.0.1:
     resolution: {integrity: sha512-SG21kZHGC3XRTSUhtofZkBzZTJNM5ecCi0SK2IMKmSXR8vO3peL+kb1O0z7Zl83jKtutG4k5Wv/W7V3/YHvzPA==}
     dependencies:
@@ -4800,14 +4792,15 @@ packages:
       - supports-color
     dev: false
 
-  /remark-github@11.2.4:
-    resolution: {integrity: sha512-GJjWFpwqdrHHhPWqMbb8+lqFLiHQ9pCzUmXmRrhMFXGpYov5n2ljsZzuWgXlfzArfQYkiKIZczA2I8IHYMHqCA==}
+  /remark-github@12.0.0:
+    resolution: {integrity: sha512-ByefQKFN184LeiGRCabfl7zUJsdlMYWEhiLX1gpmQ11yFg6xSuOTW7LVCv0oc1x+YvUMJW23NU36sJX2RWGgvg==}
     dependencies:
-      '@types/mdast': 3.0.10
-      mdast-util-find-and-replace: 2.2.1
-      mdast-util-to-string: 3.1.0
-      unified: 10.1.2
-      unist-util-visit: 4.1.0
+      '@types/mdast': 4.0.0
+      mdast-util-find-and-replace: 3.0.1
+      mdast-util-to-string: 4.0.0
+      to-vfile: 8.0.0
+      unist-util-visit: 5.0.0
+      vfile: 6.0.1
     dev: false
 
   /remark-parse@10.0.1:
@@ -5250,6 +5243,12 @@ packages:
     dependencies:
       is-number: 7.0.0
     dev: true
+
+  /to-vfile@8.0.0:
+    resolution: {integrity: sha512-IcmH1xB5576MJc9qcfEC/m/nQCFt3fzMHz45sSlgJyTWjRbKW1HAkJpuf3DgE57YzIlZcwcBZA5ENQbBo4aLkg==}
+    dependencies:
+      vfile: 6.0.1
+    dev: false
 
   /trim-lines@3.0.1:
     resolution: {integrity: sha512-kRj8B+YHZCc9kQYdWfJB2/oUl9rA99qbowYYBtr4ui4mZyAQ2JpvVBd/6U2YloATfqBhBTSMhTpgBHtU0Mf3Rg==}
