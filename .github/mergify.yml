@@ -1,9 +1,9 @@
-pull_request_rules:
-  - name: automatic merge for renovate pull requests
-    conditions:
-      - author~=^renovate(|-preview)\[bot\]$
-      - label=dependencies
-      - check-success=lint (ubuntu-latest, 17.x)
-    actions:
-      merge:
-        method: squash
+# pull_request_rules:
+#   - name: automatic merge for renovate pull requests
+#     conditions:
+#       - author~=^renovate(|-preview)\[bot\]$
+#       - label=dependencies
+#       - check-success=lint (ubuntu-latest, 17.x)
+#     actions:
+#       merge:
+#         method: squash
